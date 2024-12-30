@@ -74,8 +74,25 @@ If you use Open-PAV in your research or projects, please cite the following:
   year={2024},
   organization={Your Institution}
 }
+```
 
+## License
 
+Open-PAV is released under the [MIT License](LICENSE). See the LICENSE file for details.
+
+## Contributors
+
+Open-PAV is developed and maintained by:
+
+### Project Lead:
+- Your Name ([LinkedIn](https://linkedin.com/in/your-profile), [GitHub](https://github.com/your-profile))
+
+### Team Members:
+- Member Name ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
+- Member Name ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
+
+### External Acknowledgements:
+We would like to thank contributors and collaborators who have supported this project.
 
 
 
