@@ -8,4 +8,4 @@ nav:
   - Model Calibration: model-calibration.md
   - Simulation Integration: simulation-integration.md
   - Vehicle Selection: vehicle-selection.md
-site_dir: site
+site_dir: docs
