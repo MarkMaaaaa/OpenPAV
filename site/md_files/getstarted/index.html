@@ -1,0 +1,573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Getstarted - OpenPAV Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OpenPAV Documentation" class="md-header__button md-logo" aria-label="OpenPAV Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenPAV Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getstarted
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenPAV Documentation" class="md-nav__button md-logo" aria-label="OpenPAV Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OpenPAV Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vehicle-selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vehicle Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-vehicle-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single Vehicle Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Vehicle Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-two-lane-highway-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Two-lane highway test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-town06-test-pytorch-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Town06 test (Pytorch required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-town06-co-simulation-test-pytorch-and-sumo-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Town06 Co-simulation test (Pytorch and Sumo required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-driving-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cooperative Driving Test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cooperative Driving Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-platooning-stability-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Platooning stability test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-cooperative-merge-and-joining-a-platoon" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cooperative merge and joining a platoon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cooperative-merge-and-joining-a-platoon-under-co-simulation-sumo-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cooperative merge and joining a platoon under co-simulation (SUMO required)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-platoon-back-join-pytorch-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Platoon back-join (Pytorch required)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Getstarted</h1>
+
+<h2 id="quick-start">Quick Start</h2>
+<p>OpenCDA provides benchmark scenarios that researchers can use directly without any modification. We will also be adding new testing scenarios in future releases. Running these 
+scenario testings only need one line of command:</p>
+<pre><code class="language-she">cd ~/OpenCDA
+python opencda.py -t scenario_name -v carla_version --apply_ml --record
+</code></pre>
+<p>Parameters explanation:
+* <code>-t</code>: The name of the tesitng scenario. A python script with the same name should exist in
+<code>opencda/scenario_testing/</code> to construct the simulation, and a yaml file with the same name should exist in 
+<code>opencda/scenario_testing/config_yaml/</code> to define the simulation parameters.
+* <code>-v --version</code>: Define the CARLA simulator version, default 0.9.11. Right now only 0.9.11 and 0.9.12 are supported.
+  We need this as there are some api changes from 0.9.11 to 0.9.12.
+* <code>--apply_ml</code>  (Optional): A flag to indicate whether a deep learning model needs to be loaded. If this flag is 
+set, Pytorch will be imported.
+* <code>--record</code> (Optional): A flag to indicate whether to record this simulation. <a href="https://carla.readthedocs.io/en/latest/adv_recorder/">Check here for more details</a>.</p>
+<p>Below we will demonstrate some examples of running the benchmark testings in OpenCDA.</p>
+<hr />
+<h3 id="single-vehicle-test">Single Vehicle Test</h3>
+<p>**Notice: <strong> Change -v 0.9.11 to -v 0.9.12 if you are using CARLA 0.9.12.</strong></p>
+<h4 id="1-two-lane-highway-test">1. Two-lane highway test</h4>
+<pre><code class="language-sh">python opencda.py -t single_2lanefree_carla -v 0.9.11
+</code></pre>
+<p>In this scenario , a single Connected Automated Vehicle will be spawned at a 2-lane highway customized map.  This
+CAV will try to reach the assigned destination with a desired speed of 100km/h and manage to safely interact
+with the surrounding traffic flow. The CAV's localization, planning, and control modules will be activated, and the perception module will be deactivated
+by default, thus <strong> pytorch is NOT required in this testing </strong>. <br></p>
+<p>If you want to activate the perception module, please check <a href="../yaml_define/">Yaml Defining Rules</a> to see details.</p>
+<p><img alt="" src="../images/single_2lanefree_carla.gif" /></p>
+<p><strong>Note: The bounding boxes draw on the camera and lidar are retrieved from the server directly and 
+ projected to the sensor space</strong></p>
+<h4 id="2-town06-test-pytorch-required">2. Town06 test (Pytorch required)</h4>
+<pre><code class="language-sh">python opencda.py -t single_town06_carla  -v 0.9.11 --apply_ml
+</code></pre>
+<p>The apply_ml flag will import the pytorch library and load Yolov5 model (<strong>Thus Pytorch is required</strong>) for object detection. Thus, in this
+scenario, the <strong>perception</strong>, localization, planning and control modules will all be activated.
+<img alt="" src="../images/single_town06_carla_2.gif" /></p>
+<p><strong>Note: The bounding box draw here comes from the detection model.</strong></p>
+<h4 id="3-town06-co-simulation-test-pytorch-and-sumo-required">3. Town06 Co-simulation test (Pytorch and Sumo required)</h4>
+<pre><code class="language-sh">python opencda.py -t single_town06_cosim  -v 0.9.11 --apply_ml
+</code></pre>
+<p>This scenario applies <strong>Sumo</strong> to generate the traffic flow instead of using Carla traffic manager.
+Yolov5 and simple Lidar fusion are used to detect object 3D bounding box. Therefore, both
+Pytorch and Sumo are required to install to run this benchmark test.
+<img alt="" src="../images/town06_cosim.gif" /></p>
+<hr />
+<h3 id="cooperative-driving-test">Cooperative Driving Test</h3>
+<h4 id="1-platooning-stability-test">1. Platooning stability test</h4>
+<pre><code class="language-sh">python opencda.py -t platoon_stability_2lanefree_carla -v 0.9.11
+</code></pre>
+<p>In this scenario, a platoon with 4 members will be placed at the 2-lane highway map. The platoon leader will dramatically increases
+and decreases its speed to test whether the members can still keep the desired time gap. In this way, the platoon
+stability is verified.</p>
+<h4 id="2-cooperative-merge-and-joining-a-platoon">2. Cooperative merge and joining a platoon</h4>
+<pre><code class="language-sh">python opencda.py -t platoon_joining_2lanefree_carla -v 0.9.11
+</code></pre>
+<p>In this scenario, a platoon will drive on the mainline together with a mixed traffic flow. A single CAV will come from the 
+merging lane, communicate with the platoon to cooperatively merge into the mainline, and simultaneously join the platoon.</p>
+<p><img alt="" src="../images/platoon_joining_2lanefree.gif" /></p>
+<h4 id="3-cooperative-merge-and-joining-a-platoon-under-co-simulation-sumo-required">3. Cooperative merge and joining a platoon under co-simulation (SUMO required)</h4>
+<pre><code class="language-sh">python opencda.py -t platoon_joining_2lanefree_cosim -v 0.9.11
+</code></pre>
+<p><img alt="" src="../images/platoon_joining_cosim.gif" /></p>
+<h4 id="4-platoon-back-join-pytorch-required">4. Platoon back-join (Pytorch required)</h4>
+<pre><code class="language-sh">python opencda.py -t platoon_joining_town06_carla  -v 0.9.11 --apply_ml
+</code></pre>
+<p>A single CAV will try to overtake several human-driven vehicles to join the platoon from the back.
+Pytorch is required for this test since we use yolov5 detetion.
+<img alt="" src="../images/platoon_joining_town06.gif" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

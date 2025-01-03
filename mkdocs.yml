@@ -1,0 +1,10 @@
+site_name: OpenPAV
+theme:
+  name: material
+nav:
+  - Overview: index.md
+  - Installation: installation.md
+  - Quick Start: quick_start.md
+  - Model Calibration: model_calibration.md
+  - Simulation Integration: simulation_integration.md
+  - Model Download: model_download.md

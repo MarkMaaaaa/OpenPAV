@@ -1,0 +1,960 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Yaml define - OpenPAV Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yaml-rule" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OpenPAV Documentation" class="md-header__button md-logo" aria-label="OpenPAV Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenPAV Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yaml define
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenPAV Documentation" class="md-nav__button md-logo" aria-label="OpenPAV Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OpenPAV Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Model Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vehicle-selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vehicle Selection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yaml Rule
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yaml Rule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Explanation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    <span class="md-ellipsis">
+      world
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platoon_base" class="md-nav__link">
+    <span class="md-ellipsis">
+      platoon_base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carla_traffic_manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      carla_traffic_manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sumo-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      sumo (optional)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Yaml define</h1>
+
+<h2 id="yaml-rule">Yaml Rule</h2>
+<p>To create a scenario test in OpenCDA, you need to start by writing a yml file to define the simulation parameters. This can be a bit tricky, so we've provided a helpful starting point in the form of a yaml file called default.yaml.</p>
+<p>The default.yaml file provides default parameters for a scenario, which you can modify as needed to create your own scenario. Instead of starting from scratch, you can use this file as a template and only change the parts that are different from the default parameters.</p>
+<p>If you're not sure where to start, we've included example yaml files for various scenarios in the opencda/scenario_testing/config_yaml directory. You can use these as a guide or a starting point for your own scenario.</p>
+<p>Below show an concrete example:</p>
+<pre><code class="language-yaml"># default.yaml
+description: |-
+  Copyright 2021 &lt;UCLA Mobility Lab&gt;
+  Author: Runsheng Xu &lt;rxx3386@ucla.edu&gt;
+  Content: This is the template scenario testing configuration file that other scenarios could directly refer
+
+# define carla simulation setting
+world:
+  sync_mode: true
+  client_port: 2000
+  fixed_delta_seconds: 0.05
+  seed: 11 # seed for numpy and random
+  weather:
+    sun_altitude_angle: 15 # 90 is the midday and -90 is the midnight
+    cloudiness: 0 # 0 is the clean sky and 100 is the thickest cloud
+    precipitation: 0 # rain, 100 is the heaviest rain
+    precipitation_deposits: 0 # Determines the creation of puddles. Values range from 0 to 100, being 0 none at all and 100 a road completely capped with water.
+    wind_intensity: 0 # it will influence the rain
+    fog_density: 0 # fog thickness, 100 is the largest
+    fog_distance: 0  # Fog start distance. Values range from 0 to infinite.
+    fog_falloff: 0 # Density of the fog (as in specific mass) from 0 to infinity. The bigger the value, the more dense and heavy it will be, and the fog will reach smaller heights
+    wetness: 0
+
+
+# Define the basic parameters of the rsu
+rsu_base:
+  sensing:
+    perception:
+      activate: false # when not activated, objects positions will be retrieved from server directly
+      camera:
+        visualize: 4 # how many camera images need to be visualized. 0 means no visualization for camera
+        num: 4 # how many cameras are mounted on the vehicle. Maximum 3(frontal, left and right cameras)
+        # relative positions (x,y,z,yaw) of the camera. len(positions) should be equal to camera num
+        positions:
+          - [2.5, 0, 1.0, 0]
+          - [0.0, 0.3, 1.8, 100]
+          - [0.0, -0.3, 1.8, -100]
+          - [-2.0, 0.0, 1.5, 180]
+      lidar: # lidar sensor configuration, check CARLA sensor reference for more details
+        visualize: true
+        channels: 32
+        range: 120
+        points_per_second: 1000000
+        rotation_frequency: 20 # the simulation is 20 fps
+        upper_fov: 2
+        lower_fov: -25
+        dropoff_general_rate: 0.3
+        dropoff_intensity_limit: 0.7
+        dropoff_zero_intensity: 0.4
+        noise_stddev: 0.02
+    localization:
+      activate: true # when not activated, ego position will be retrieved from server directly
+      dt: ${world.fixed_delta_seconds} # used for kalman filter
+      gnss: # gnss sensor configuration
+        noise_alt_stddev: 0.05
+        noise_lat_stddev: 3e-6
+        noise_lon_stddev: 3e-6
+
+# Basic parameters of the vehicles
+vehicle_base:
+  sensing: # include perception and localization
+    perception:
+      activate: false # when not activated, objects positions will be retrieved from server directly
+      camera:
+        visualize: 1 # how many camera images need to be visualized. 0 means no visualization for camera
+        num: 1 # how many cameras are mounted on the vehicle.
+        positions:  # relative positions (x,y,z,yaw) of the camera. len(positions) should be equal to camera num
+          - [2.5, 0, 1.0, 0]
+      lidar: # lidar sensor configuration, check CARLA sensor reference for more details
+        visualize: true
+        channels: 32
+        range: 50
+        points_per_second: 100000
+        rotation_frequency: 20 # the simulation is 20 fps
+        upper_fov: 10.0
+        lower_fov: -30.0
+        dropoff_general_rate: 0.0
+        dropoff_intensity_limit: 1.0
+        dropoff_zero_intensity: 0.0
+        noise_stddev: 0.0
+
+    localization:
+      activate: false # when not activated, ego position will be retrieved from server directly
+      dt: ${world.fixed_delta_seconds} # used for kalman filter
+      gnss: # gnss sensor configuration
+        noise_alt_stddev: 0.001
+        noise_lat_stddev: 1.0e-6
+        noise_lon_stddev: 1.0e-6
+        heading_direction_stddev: 0.1 # degree
+        speed_stddev: 0.2
+      debug_helper:
+        show_animation: false # whether to show real-time trajectory plotting
+        x_scale: 1.0 # used to multiply with the x coordinate to make the error on x axis clearer
+        y_scale: 100.0 # used to multiply with the y coordinate to make the error on y axis clearer
+
+  map_manager:
+    pixels_per_meter: 2 # rasterization map resolution
+    raster_size: [224, 224] # the rasterize map size (pixel)
+    lane_sample_resolution: 0.1 # for every 0.1m, we draw a point of lane
+    visualize: true # whether to visualize the rasteraization map
+    activate: true # whether activate the map manager
+
+  safety_manager: # used to watch the safety status of the cav
+    print_message: true # whether to print the message if hazard happens
+    collision_sensor:
+      history_size: 30
+      col_thresh: 1
+    stuck_dector:
+      len_thresh: 500
+      speed_thresh: 0.5
+    offroad_dector: [ ]
+    traffic_light_detector: # whether the vehicle violate the traffic light
+      light_dist_thresh: 20
+
+  behavior:
+    max_speed: 111 # maximum speed, km/h
+    tailgate_speed: 121 # when a vehicles needs to be close to another vehicle asap
+    speed_lim_dist: 3 # max_speed - speed_lim_dist = target speed
+    speed_decrease: 15 # used in car following mode to decrease speed for distance keeping
+    safety_time: 4 # ttc safety thresholding for decreasing speed
+    emergency_param: 0.4 # used to identify whether a emergency stop needed
+    ignore_traffic_light: true # whether to ignore traffic light
+    overtake_allowed: true # whether overtake allowed, typically false for platoon leader
+    collision_time_ahead: 1.5 # used for collision checking
+    overtake_counter_recover: 35 # the vehicle can not do another overtake during next certain steps
+    sample_resolution: 4.5 # the unit distance between two adjacent waypoints in meter
+    local_planner:  # trajectory planning related
+      buffer_size: 12 # waypoint buffer size
+      trajectory_update_freq: 15 # used to control trajectory points updating frequency
+      waypoint_update_freq: 9 # used to control waypoint updating frequency
+      min_dist: 3 # used to pop out the waypoints too close to current location
+      trajectory_dt: 0.20 # for every dt seconds, we sample a trajectory point from the trajectory path as next goal state
+      debug: false # whether to draw future/history waypoints
+      debug_trajectory: false # whether to draw the trajectory points and path
+
+  controller:
+    type: pid_controller # this has to be exactly the same name as the controller py file
+    args:
+      lat:
+        k_p: 0.75
+        k_d: 0.02
+        k_i: 0.4
+      lon:
+        k_p: 0.37
+        k_d: 0.024
+        k_i: 0.032
+      dynamic: false # whether use dynamic pid setting
+      dt: ${world.fixed_delta_seconds} # this should be equal to your simulation time-step
+      max_brake: 1.0
+      max_throttle: 1.0
+      max_steering: 0.3
+  v2x:  # communication related
+    enabled: true
+    communication_range: 35
+
+
+# define the background traffic control by carla
+carla_traffic_manager:
+  sync_mode: true # has to be same as the world setting
+  global_distance: 5 # the minimum distance in meters that vehicles have to keep with the rest
+  # Sets the difference the vehicle's intended speed and its current speed limit.
+  #  Carla default speed is 30 km/h, so -100 represents 60 km/h,
+  # and 20 represents 24 km/h
+  global_speed_perc: -100
+  set_osm_mode: true # Enables or disables the OSM mode.
+  auto_lane_change: false
+  ignore_lights_percentage: 0 # whether set the traffic ignore traffic lights
+  random: false # whether to random select vehicles' color and model
+  vehicle_list: []  # define in each scenario. If set to ~, then the vehicles be spawned in a certain range
+  # Used only when vehicle_list is ~
+  # x_min, x_max, y_min, y_max, x_step, y_step, vehicle_num
+  range: []
+
+# define the platoon basic characteristics
+platoon_base:
+  max_capacity: 10
+  inter_gap: 0.6 # desired time gap
+  open_gap: 1.2 # open gap
+  warm_up_speed: 55 # required speed before cooperative merging
+  change_leader_speed: true # whether to assign leader multiple speed to follow
+  leader_speeds_profile: [ 85, 95 ] # different speed for leader to follow
+  stage_duration: 10 # how long should the leader keeps in the current velocity stage
+
+# define tne scenario in each specific scenario
+scenario:
+  single_cav_list: []
+  platoon_list: []
+</code></pre>
+<p>The above yaml file is the <code>default.yaml</code>. If the users wants to create a platoon joining scenario in highway,
+here is how we create <code>platoon_joining_2lanefree_carla.yaml</code>:</p>
+<pre><code class="language-yaml"># platoon_joining_2lanefree_carla.yaml
+vehicle_base:
+  sensing:
+    perception:
+      camera:
+        visualize: 0 # how many camera images need to be visualized. 0 means no visualization for camera
+        num: 0 # how many cameras are mounted on the vehicle. Maximum 3(frontal, left and right cameras)
+        # relative positions (x,y,z,yaw) of the camera. len(positions) should be equal to camera num
+        positions: []
+      lidar:
+        visualize: false
+  map_manager:
+    visualize: false
+    activate: false
+  behavior:
+    max_speed: 95 # maximum speed, km/h
+    tailgate_speed: 105 # when a vehicles needs to be close to another vehicle asap
+    overtake_allowed: false # whether overtake allowed, typically false for platoon leader
+    collision_time_ahead: 1.3 # used for collision checking
+    overtake_counter_recover: 35 # the vehicle can not do another overtake during next certain steps
+    local_planner:
+      trajectory_dt: 0.25 # for every dt seconds, we sample a trajectory point from the trajectory path as next goal state
+
+# define the platoon basic characteristics
+platoon_base:
+  max_capacity: 10
+  inter_gap: 0.6 # desired time gap
+  open_gap: 1.5 # open gap
+  warm_up_speed: 55 # required speed before cooperative merging
+
+# define the background traffic control by carla
+carla_traffic_manager:
+  global_distance: 4.0 # the minimum distance in meters that vehicles have to keep with the rest
+  # Sets the difference the vehicle's intended speed and its current speed limit.
+  #  Carla default speed is 30 km/h, so -100 represents 60 km/h,
+  # and 20 represents 24 km/h
+  global_speed_perc: -300
+  vehicle_list:
+    - spawn_position: [-285, 8.3, 0.3, 0, 0, 0]
+    - spawn_position: [-310, 8.3, 0.3, 0, 0, 0]
+    - spawn_position: [-390, 8.3, 0.3, 0, 0, 0]
+    - spawn_position: [-320, 4.8, 0.3, 0, 0, 0]
+      vehicle_speed_perc: -200
+    - spawn_position: [-335, 4.8, 0.3, 0, 0, 0]
+    - spawn_position: [-360, 4.8, 0.3, 0, 0, 0]
+    - spawn_position: [-400, 4.8, 0.3, 0, 0, 0]
+    - spawn_position: [-410, 4.8, 0.3, 0, 0, 0]
+
+# define scenario. In this scenario, a 4-vehicle platoon already exists.
+scenario:
+  platoon_list:
+    - name: platoon1
+      destination: [1000.372955, 8.3, 0.3]
+      members: # the first one is regarded as leader by default
+        - name: cav1
+          spawn_position: [-350, 8.3, 0.3, 0, 0, 0] # x, y, z, roll, yaw, pitch
+          perception:
+            camera:
+              visualize: 1 # how many camera images need to be visualized. 0 means no visualization for camera
+              num: 1 # how many cameras are mounted on the vehicle. Maximum 3(frontal, left and right cameras)
+              # relative positions (x,y,z,yaw) of the camera. len(positions) should be equal to camera num
+              positions:
+                - [2.5, 0, 1.0, 0]
+            lidar:
+              visualize: true
+          behavior:
+            local_planner:
+              debug_trajectory: true
+              debug: false
+        - name: cav2
+          spawn_position: [-360, 8.3, 0.3, 0, 0, 0]
+        - name: cav3
+          spawn_position: [-370, 8.3, 0.3, 0, 0, 0]
+        - name: cav4
+          spawn_position: [-380, 8.3, 0.3, 0, 0, 0]
+  single_cav_list: # this is for merging vehicle or single cav without v2x
+    - name: single_cav
+      spawn_position: [-380, 4.8, 0.3, 0, 0, 0]
+      # when this is defined, the above parameter will be ignored, and a special map function will
+      # be used to define the spawn position based on the argument
+      spawn_special: [0.625]
+      destination: [300, 12.0, 0]
+      sensing:
+        perception:
+          camera:
+            visualize: 1 # how many camera images need to be visualized. 0 means no visualization for camera
+            num: 1 # how many cameras are mounted on the vehicle. Maximum 3(frontal, left and right cameras)
+            # relative positions (x,y,z,yaw) of the camera. len(positions) should be equal to camera num
+            positions:
+              - [2.5, 0, 1.0, 0]
+          lidar:
+            visualize: true
+      v2x:
+        communication_range: 35
+      behavior:
+        overtake_allowed: true
+        local_planner:
+          debug_trajectory: true
+          debug: false
+</code></pre>
+<p>As you can see, the <code>platoon_joining_2lanefree_carla.yaml</code> only contains the part that <code>default.yaml</code> does not have or has different
+parameters. </p>
+<h3 id="detailed-explanation">Detailed Explanation</h3>
+<hr />
+<h4 id="world">world</h4>
+<p>The parameter <code>world</code> in the yaml defines the CARLA server setting.
+* <code>sync</code> : boolean type, if true, the simulation will be in sync mode, otherwise async mode. Check 
+the <a href="https://carla.readthedocs.io/en/latest/adv_synchrony_timestep/">CARLA Sync documentation</a>  to know more.
+* <code>client_port</code> : the python client port connected to the CARLA server.
+* <code>fixed_delta_seconds</code> : The elapsed time remains constant between simulation steps.
+ If it is set to 0.05 seconds, there will be 20 frames per simulated second.</p>
+<p>#### vehicle_base
+ <code>vehicle_base</code> defines the default parameters for each CAV including perception, localization, planning, control,
+ and v2x modules. The ampersand <code>&amp;</code> character before <code>vehicle_base</code> is ued to to create a <code>named anchor</code>, 
+ which be referenced later on with an asterisk <code>*</code>. </p>
+<ul>
+<li><code>sensing</code> :  Define perception and localization related parameters.<ul>
+<li><code>perception</code>:  Module related to object detection.<ul>
+<li><code>activate</code> : bool type, if false, the CAV will retrieve object positions from the server directly. 
+Otherwise, yolov5 will be used for object detection.</li>
+<li><code>camera_visualize</code> : int type, indicates how many camera rgb images should be visualized during
+simulation. 0 means no rgb image visualization.</li>
+<li><code>camera_num</code> : int type, indicates how many cameras are mounted in the CAV, e.g. 3 represents a frontal,
+a left, and a right camera will be mounted on the top of the vehicle to cover a 270 degree of FOV.</li>
+<li><code>lidar_visualize</code> : bool type, indicates whether to visualize 3d lidar points during simulaiton.</li>
+<li><code>lidar</code> : set the configuration of the lidar sensor.</li>
+</ul>
+</li>
+<li><code>localization</code> : Module related to self-localization.<ul>
+<li><code>activate</code> : bool type, if true, the CAV will use gnss+imu+kf to get ego vehicle position. Otherwise, 
+the CAV will load the ego position from server directly.</li>
+<li><code>gnss</code> : related to the parameters of the gnss sensor.</li>
+<li><code>debug_helper</code> : parameters related to localization debugging and real-time trajectory plotting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>map_manager</code> : Define HDMap manager parameters</li>
+<li><code>pixels_per_meter</code> : The rasterization map precision.</li>
+<li><code>raster_size</code> : The rasterization map's H and W in pixels.</li>
+<li><code>lane_sample_resolution</code> : Waypoint sampling resolution for lane drawing.</li>
+<li><code>visualize</code> : Whether to show the rasterization map during running in real-time.</li>
+<li><code>activate</code> : Whether activate the map_manager module.</li>
+<li><code>behavior</code> : Define behavior planning parameters<ul>
+<li><code>max_speed</code> : int type, the maximum speed (km/h) that the CAV is allowed to reach.</li>
+<li><code>tailgate_speed</code> : int type, the target speed (km/h) for CAV when it tries to catch up with a platoon, it is usually larger
+ than <code>max_speed</code></li>
+<li><code>speed_lim_dist</code> : int type, during normal driving mode, <code>target_speed</code> = <code>max_speed</code> - <code>speed_lim_dist</code></li>
+<li><code>speed_decrease</code> : int type, when the CAV is in car following mode and it gets too close to the
+ front vehicle, <code>target_speed</code> = <code>front_vehicle_speed</code> - <code>speed_decrease</code></li>
+<li><code>safety_time</code> : float type, ttc thresholding to identify whether the ego vehicle is too close to 
+ the front vehicle.</li>
+<li><code>emergency_param</code> : float type, <code>emergency_stop_distance</code> = <code>current_speed</code> * <code>emergency_param</code></li>
+<li><code>ignore_traffic_light</code> : bool type, if set to true, the CAV will ignore the traffic light.</li>
+<li><code>overtake_allowed</code> :  bool type, if set to false, overtaking is not allowed during driving.</li>
+<li><code>collision_time_ahead</code> : float type, collision detection range</li>
+<li><code>sample_resolution</code> : float type, the unit distance (m) between two adjacent waypoints</li>
+<li><code>local_planner</code> : Define trajectory planning parameters.<ul>
+<li><code>buffer_size</code> : dequeue type, waypoint buffer size.</li>
+<li><code>trajectory_update_freq</code> : int type, the update frequency for trajectory, when the length of trajectory buffer 
+ is below the frequency number, the ego vehicle will re-generate the trajectory.</li>
+<li><code>waypoint_update_freq</code> : int type, the update frequency for waypoint buffer, when the length of the 
+ waypoint buffer is below the frequency, the waypoint buffer will load waypoints from <code>waypoint_queue</code>.</li>
+<li><code>min_dist</code> : float type, used to pop out the waypoints that are too close to the current location</li>
+<li><code>trajectory_dt</code> : float type, trajectory points sampling resolution.</li>
+<li><code>debug</code> : bool type, if true, waypoint will be visualized.</li>
+<li><code>debug_trajectory</code> : bool type, if true, trajectory will be visualized.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>controller</code> : Define controller parameters.</p>
+<ul>
+<li><code>type</code> : string type, the type of controller the ego vehicle uses.</li>
+<li><code>args</code> : the arguments related to the selected controller.</li>
+</ul>
+</li>
+<li>
+<p><code>v2x</code> : Defome vehicle communication parameters.</p>
+<ul>
+<li><code>enabled</code> : bool type, indicate whether v2x is enabled.</li>
+<li><code>communication_range</code> : float type, the searching range of the CAV</li>
+<li><code>loc_noise</code> : float type, the deviation of the noise added to the received ego position 
+ during communication.</li>
+<li><code>yaw_noise</code> : float type, the deviation of the noise added to the received yaw angle
+ during communication.</li>
+<li><code>speed_noise</code> : float type, the deviation of the noise added to the received ego speed 
+ during communication.</li>
+<li><code>lag</code> : int type, the lagging during the communication. E.g., 2 means the CAV
+  receives the packages of other CAVs at most 2 time steps ago. </li>
+</ul>
+</li>
+</ul>
+<h4 id="platoon_base">platoon_base</h4>
+<p><code>platoon_base</code> define the default platooning parameters.
+* <code>max_capacity</code> : int type, the maximum number of members that the platoon can include.
+* <code>inter_gap</code> : float type, desired time gap.
+* <code>open_gap</code> : float type, time gap during cut-in-join.
+* <code>warm_up_speed</code> : float type, the speed that the merging vehicle needs to reach before do any
+kind of joining.</p>
+<h4 id="carla_traffic_manager">carla_traffic_manager</h4>
+<p><code>carla_traffic_manager</code> defines the traffic flow controlled by <strong>CARLA</strong> traffic manager. <strong>
+Users do not need to define this parameter if co-simulation is conducted as Sumo will control the traffic.</strong></p>
+<p>There are two ways to define the positions of the background vehicles. 
+* Set the parameter <code>vehicle_list</code> under <code>carla_traffic_manager</code> as a list. An example is demonstrated
+below. In this example, two vehicles are spawned as background vehicle. The first one is spawned at position <code>x=100, y=100, z=0.3</code>,
+and the initial rotation angle is <code>roll=0, yaw=20 (degree), pitch=0</code>. The second one is spawned at position 
+<code>x=122, y=666, z=0.3</code>, and the angle is <code>roll=0, yaw=0, pitch=0</code>.</p>
+<pre><code class="language-yaml">carla_traffic_manager:
+  vehicle_list: 
+    - spawn_position: [100, 100, 0.3, 0 , 20, 0]
+    - spawn_position: [122, 666, 0.3, 0 , 0, 0]
+</code></pre>
+<ul>
+<li>Set the parameter <code>vehicle_list</code> under <code>carla_traffic_manager</code> as <code>~</code>. The CARLA server will then spawn
+the vehicles randomly in a certain rectangle range given by the additional parameter <code>range</code>. </li>
+</ul>
+<pre><code class="language-yaml">carla_traffic_manager:
+  vehicle_list: ~  # a number or a list
+  # Used only when vehicle_list is a number.
+  # x_min, x_max, y_min, y_max, x_step, y_step, veh_num
+  range:
+    - [ 2, 10, 0, 200, 3.5, 25, 30]
+
+</code></pre>
+<p>Other important parameters:
+* <code>sync_mode</code> : bool type, it should be consistent with server's sync setting.
+* <code>global_speed_perc</code> : float type, sets the difference the vehicle's intended speed and its current speed limit. 
+Speed limits can be exceeded by setting the number to a negative value. Default is 30 km/h. Exceeding a speed limit can be done using negative percentages.
+For example, -300 will assign a speed of 90, 50 will assign a speed of 15.
+* <code>auto_lane_change</code> : bool type, whether the vehicles are allowed to do lane change.
+* <code>random</code> : bool type, if set true, the background traffic will randomly select car model and color. Otherwise,
+all vehicles will be in lincoln mkz model and green color.</p>
+<h4 id="scenario">scenario</h4>
+<p><code>scenario</code> defines each CAV's spawn position and vehicle parameters if different from the default setting <code>vehicle_base</code>.</p>
+<pre><code class="language-yaml">scenario:
+  platoon_list:
+    - &lt;&lt;: *platoon_base
+      destination: [1000.372955, 8.3, 0.3]
+      members: # the first one is regarded as leader by default
+        - &lt;&lt;: *vehicle_base
+          spawn_position: [-350, 8.3, 0.3, 0, 0, 0] # x, y, z, roll, yaw, pitch
+          behavior:
+            &lt;&lt;: *base_behavior
+            overtake_allowed: false
+          platoon: # we need to add platoon specific params
+            &lt;&lt;: *platoon_base
+        - &lt;&lt;: *vehicle_base
+          spawn_position: [-360, 8.3, 0.3, 0, 0, 0]
+          platoon: # we need to add platoon specific params
+            &lt;&lt;: *platoon_base
+   single_cav_list: 
+    - &lt;&lt;: *vehicle_base
+      spawn_position: [-380, 4.8, 0.3, 0, 0, 0]
+      destination: [300, 12.0, 0]
+      sensing:
+        &lt;&lt;: *base_sensing
+        perception:
+          &lt;&lt;: *base_perception
+          activate: true
+</code></pre>
+<p>In the above example, a platoon containing two members and a single CAV that is out of any platoon will be spawn.
+The <code>destination</code> in the platoon sets the destination of the platoon. The first member of platoon is regarded
+as the leader by default, and the second member will be the following car. All members in the same platoon should
+be spawn in the same lane with close distance.  The <code>&lt;&lt;: *vehicle_base</code> will load the whole default setting of CAV 
+into the leader. However, since overtake is not allowed for a platoon leader and the default setting allows so, this
+needs to be changed by using the following part:</p>
+<pre><code class="language-yaml">behavior:
+  &lt;&lt;: *base_behavior
+  overtake_allowed: false   
+</code></pre>
+<p>In this way, the default attribute  <code>overtake_allowed</code> will be overwritten to false while keeping other
+attributes unchanged. Similarly, the default CAV setting does not have the <code>platoon</code> attribute, thus we also 
+add <code>platoon: &lt;&lt;: *platoon_base</code> to each member to assign the <code>platoon</code> attribute.</p>
+<p>For the single CAV, the meaning of the parameters are quite similar with the platoon members we just described.</p>
+<h4 id="sumo-optional">sumo (optional)</h4>
+<p><code>sumo</code> needs to be set only when co-simulation is required.</p>
+<pre><code class="language-yaml">sumo:
+  port: ~
+  host: ~
+  gui: true
+  client_order: 1
+  step_length: *delta
+</code></pre>
+<ul>
+<li><code>port</code> : int type, TCP port to listen to (default: 8813).</li>
+<li><code>host</code> : str type, IP of the sumo host server (default: 127.0.0.1).</li>
+<li><code>gui</code> : bool type, when set to true, Sumo gui will be show.</li>
+<li><code>client_order</code> : int type, client order number for the co-simulation TraCI connection (default: 1).</li>
+<li><code>step_length</code> : The elapsed time remains constant between simulation steps. It should be the same
+as the CARLA server.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
