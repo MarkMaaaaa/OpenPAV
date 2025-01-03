@@ -1,0 +1,11 @@
+site_name: OpenPAV Documentation
+theme:
+  name: material
+nav:
+  - Overview: overview.md
+  - Installation: installation.md
+  - Quick Start: quickstart.md
+  - Model Calibration: model-calibration.md
+  - Simulation Integration: simulation-integration.md
+  - Vehicle Selection: vehicle-selection.md
+site_dir: docs
