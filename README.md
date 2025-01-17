@@ -37,7 +37,7 @@ Open-PAV consists of the following components:
 - **Simulation Integration:** Pre-configured packages for SUMO, Vissim, and other platforms.
 - **Scenario Manager:** Tools to create and manage simulation scenarios based on real-world data.
 
-Check the [Open-PAV Documentation](https://open-pav-documentation.readthedocs.io/en/latest/) for more details.
+Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV/) for more details.
 
 ## Get Started
 
