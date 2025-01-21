@@ -88,7 +88,7 @@ Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.ed
 - Ke Ma ([Homepage](https://markmaaaaa.github.io/KeMa.github.io/portfolio/))
 
 ### Team Members:
-- Member Name ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
+- Hang Zhou ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
 - Member Name ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
 
 
