@@ -43,11 +43,12 @@ Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV/) for mo
 
 ### User Guide
 
-- [Overview](https://open-pav-documentation.readthedocs.io/en/latest/overview.html)
-- [Installation](https://open-pav-documentation.readthedocs.io/en/latest/installation.html)
-- [Quick Start](https://open-pav-documentation.readthedocs.io/en/latest/quickstart.html)
-- [Model Calibration](https://open-pav-documentation.readthedocs.io/en/latest/model_calibration.html)
-- [Simulation Integration](https://open-pav-documentation.readthedocs.io/en/latest/simulation_integration.html)
+- [Overview](https://markmaaaaa.github.io/OpenPAV/)
+- [Installation](https://markmaaaaa.github.io/OpenPAV/installation/)
+- [Quick Start](https://markmaaaaa.github.io/OpenPAV/quick_start/)
+- [Model Calibration](https://markmaaaaa.github.io/OpenPAV/model_calibration/)
+- [Simulation Integration](https://markmaaaaa.github.io/OpenPAV/simulation_integration/)
+- [Model Download](https://markmaaaaa.github.io/OpenPAV/model_download/)
 
 ### Developer Guide
 
