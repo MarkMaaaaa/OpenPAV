@@ -20,6 +20,10 @@ Open-PAV (Open Producted Automated Vehicle) is an open platform designed to faci
 
 ## What's New
 
+### March 2025
+- **Model Enhancements:** Improved calibration modeling methodology.
+- **Simulation Integration:** Configured packages for SUMO, Vissim, and basic parameters for models.
+
 ### December 2024
 - **Dataset Expansion:** Added new open-source trajectory datasets from ULTRA datasets.
 - **Model Enhancements:** Improved basic logic for the project.
