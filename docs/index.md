@@ -4,25 +4,30 @@ Open-PAV (Open Producted Automated Vehicle) is an open platform designed to faci
 
 ## Key Features
 
-### Comprehensive Dataset
+**Comprehensive Dataset**
 
 - Collects and organizes data from PAVs, including LiDAR, images, videos, and trajectory data.
 - Provides datasets in a unified vectorized format for efficient access and analysis.
 
-### Kinematic Model Calibration
+**Kinematic Model Calibration**
 
 - Supports linear models, IDM models (for SUMO), Wiedemann-99 (for Vissim), and machine learning-based models.
 - Includes pre-configured model parameters for direct use in traditional simulation software.
 
-### Simulation Integration
+**Simulation Integration**
 
 - Enables rapid and accurate simulation of automated vehicle behavior and analysis of their impacts.
 
-### Community Collaboration
+**Community Collaboration**
 
 - Designed to foster contributions and collaboration among researchers globally.
 
 ## What's New
+
+**March 2025**
+
+- Model Enhancements: Improved calibration modeling methodology.
+- Simulation Integration:Configured packages for SUMO, Vissim, and basic parameters for models.
 
 **December 2024**
 
