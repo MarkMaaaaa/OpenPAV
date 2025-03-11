@@ -1,6 +1,6 @@
 # Open-PAV
 
-Open-PAV (Open Producted Automated Vehicle) is an open platform designed to facilitate data collection, model calibration, and simulation of producted automated vehicle behaviors. It integrates diverse datasets and calibrated vehicle models, making it an essential tool for researchers and developers aiming to study producted automated vehicle (PAV) dynamics and their impacts. The project encourages contributions from the research community and provides ready-to-use model parameters for seamless integration with simulation tools.
+Open-PAV (Open Product Automated Vehicle) is an open platform designed to facilitate data collection, model calibration, and simulation of producted automated vehicle behaviors. It integrates diverse datasets and calibrated vehicle models, making it an essential tool for researchers and developers aiming to study product automated vehicle (PAV) dynamics and their impacts. The project encourages contributions from the research community and provides ready-to-use model parameters for seamless integration with simulation tools.
 
 ## Key Features
 
@@ -27,7 +27,7 @@ Open-PAV (Open Producted Automated Vehicle) is an open platform designed to faci
 **March 2025**
 
 - Model Enhancements: Improved calibration modeling methodology.
-- Simulation Integration:Configured packages for SUMO, Vissim, and basic parameters for models.
+- Simulation Integration: Configured packages for SUMO, Vissim, and basic parameters for models.
 
 **December 2024**
 

@@ -1,6 +1,6 @@
 site_name: OpenPAV
 theme:
-  name: material
+  name: readthedocs
 nav:
   - Overview: index.md
   - Installation: installation.md
