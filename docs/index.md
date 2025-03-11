@@ -42,7 +42,8 @@ Open-PAV (Open Product Automated Vehicle) is an open platform designed to facili
 
 - **Data Repository**: A unified storage of diverse datasets (LiDAR, images, videos, trajectories).
 - **Model Calibration Tools**: Utilities to calibrate vehicle kinematic models and export them for simulation.
-- **Simulation Integration**: Pre-configured packages for SUMO, Vissim, and other platforms.
-- **Scenario Manager**: Tools to create and manage simulation scenarios based on real-world data.
+- **Simulation Integration**: Pre-configured packages for SUMO, VISSIM, and other platforms.
+<img src="images/Workflow.png" alt="Major Components" width="600">
+
 
 For more details, refer to the [Open-PAV Documentation](#).
