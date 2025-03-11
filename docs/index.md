@@ -4,17 +4,18 @@ Open-PAV (Open Product Automated Vehicle) is an open platform designed to facili
 
 ## Key Features
 
-**Comprehensive Dataset**
+**Comprehensive Data Repository**
 
-- Collects and organizes data from PAVs, including LiDAR, images, videos, and trajectory data.
+- Collects and organizes data from PAVs, including LiDAR, images, videos, and trajectory data (We have summarized 14 AV brands, 33 AV models in 13 Open-source AV Datasets from 6 AV Data Providers, [Dataset Publication](https://www.nature.com/articles/s41597-024-03795-y)).
+<img src="images/Dataset.png" alt="Major Components" width="600">
 - Provides datasets in a unified vectorized format for efficient access and analysis.
 
-**Kinematic Model Calibration**
+**AV Model Calibration**
 
 - Supports linear models, IDM models (for SUMO), Wiedemann-99 (for Vissim), and machine learning-based models.
 - Includes pre-configured model parameters for direct use in traditional simulation software.
 
-**Simulation Integration**
+**Multiple Simulator Integrations**
 
 - Enables rapid and accurate simulation of automated vehicle behavior and analysis of their impacts.
 
@@ -27,7 +28,7 @@ Open-PAV (Open Product Automated Vehicle) is an open platform designed to facili
 **March 2025**
 
 - Model Enhancements: Improved calibration modeling methodology.
-- Simulation Integration: Configured packages for SUMO, Vissim, and basic parameters for models.
+- Simulation Integration: Configured packages for SUMO, VISSIM, and basic parameters for models.
 
 **December 2024**
 
@@ -42,7 +43,7 @@ Open-PAV (Open Product Automated Vehicle) is an open platform designed to facili
 
 - **Data Repository**: A unified storage of diverse datasets (LiDAR, images, videos, trajectories).
 - **Model Calibration Tools**: Utilities to calibrate vehicle kinematic models and export them for simulation.
-- **Simulation Integration**: Pre-configured packages for SUMO, VISSIM, and other platforms.
+- **Simulator Integration**: Pre-configured packages for SUMO, VISSIM, and other platforms.
 <img src="images/Workflow.png" alt="Major Components" width="600">
 
 
