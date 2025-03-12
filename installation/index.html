@@ -58,6 +58,10 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#step-1-clone-the-open-pav-repository">Step 1: Clone the Open-PAV Repository</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-install-dependencies">Step 2: Install Dependencies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-basic-test-environment">Step 3: Basic Test Environment</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -126,39 +130,32 @@
 <p>Use Git to download the Open-PAV source code:</p>
 <pre><code class="language-bash">git clone https://github.com/MarkMaaaaa/OpenPAV.git
 cd OpenPAV
-
-### Step 2: Install Dependencies
-Ensure Python and necessary packages are installed:
-```bash
-pip install -r requirements.txt
-
-### Step 3: Basic Test Environment
-Run a simple Python simulation to verify the installation:
-```bash
-import numpy as np
+</code></pre>
+<h3 id="step-2-install-dependencies">Step 2: Install Dependencies</h3>
+<p>Ensure Python and necessary packages are installed:</p>
+<pre><code class="language-bash">pip install -r requirements.txt
+</code></pre>
+<h3 id="step-3-basic-test-environment">Step 3: Basic Test Environment</h3>
+<p>Run a simple Python simulation to verify the installation:</p>
+<pre><code class="language-bash">import numpy as np
 import matplotlib.pyplot as plt
-
-# Simple vehicle motion simulation
-t = np.linspace(0, 10, 100)
+</code></pre>
+<h1 id="simple-vehicle-motion-simulation">Simple vehicle motion simulation</h1>
+<p>t = np.linspace(0, 10, 100)
 velocity = 2 * t  # Linear acceleration
-position = 0.5 * 2 * t**2
-
-plt.plot(t, position, label=&quot;Vehicle Position&quot;)
-plt.xlabel(&quot;Time (s)&quot;)
-plt.ylabel(&quot;Position (m)&quot;)
+position = 0.5 * 2 * t**2</p>
+<p>plt.plot(t, position, label="Vehicle Position")
+plt.xlabel("Time (s)")
+plt.ylabel("Position (m)")
 plt.legend()
 plt.grid()
-plt.show()
-
-If the plot appears, your environment is ready.
-
-## Optional Components
-
-### Option 1: Install SUMO
-For SUMO users, install it as follows:
-**Ubuntu:**
-```bash
-sudo apt-get install sumo sumo-tools sumo-doc
+plt.show()</p>
+<p>If the plot appears, your environment is ready.</p>
+<h2 id="optional-components">Optional Components</h2>
+<h3 id="option-1-install-sumo">Option 1: Install SUMO</h3>
+<p>For SUMO users, install it as follows:
+<strong>Ubuntu:</strong></p>
+<pre><code class="language-bash">sudo apt-get install sumo sumo-tools sumo-doc
 
 **Windows:**
 - Download from [SUMO Official Website](https://sumo.dlr.de)
