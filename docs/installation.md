@@ -26,11 +26,13 @@ Use Git to download the Open-PAV source code:
 ```bash
 git clone https://github.com/MarkMaaaaa/OpenPAV.git
 cd OpenPAV
+```
 
 ### Step 2: Install Dependencies
 Ensure Python and necessary packages are installed:
 ```bash
 pip install -r requirements.txt
+```
 
 ### Step 3: Basic Test Environment
 Run a simple Python simulation to verify the installation:
@@ -49,6 +51,7 @@ plt.ylabel("Position (m)")
 plt.legend()
 plt.grid()
 plt.show()
+```
 
 If the plot appears, your environment is ready.
 
@@ -59,6 +62,7 @@ For SUMO users, install it as follows:
 **Ubuntu:**
 ```bash
 sudo apt-get install sumo sumo-tools sumo-doc
+```
 
 **Windows:**
 - Download from [SUMO Official Website](https://sumo.dlr.de)

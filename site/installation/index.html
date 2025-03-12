@@ -58,6 +58,20 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#step-1-clone-the-open-pav-repository">Step 1: Clone the Open-PAV Repository</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-2-install-dependencies">Step 2: Install Dependencies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#step-3-basic-test-environment">Step 3: Basic Test Environment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#optional-components">Optional Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#option-1-install-sumo">Option 1: Install SUMO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#option-2-install-vissim">Option 2: Install VISSIM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#option-3-install-pytorch-optional-for-ai-based-models">Option 3: Install PyTorch (Optional for AI-based Models)</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -126,16 +140,14 @@
 <p>Use Git to download the Open-PAV source code:</p>
 <pre><code class="language-bash">git clone https://github.com/MarkMaaaaa/OpenPAV.git
 cd OpenPAV
-
-### Step 2: Install Dependencies
-Ensure Python and necessary packages are installed:
-```bash
-pip install -r requirements.txt
-
-### Step 3: Basic Test Environment
-Run a simple Python simulation to verify the installation:
-```bash
-import numpy as np
+</code></pre>
+<h3 id="step-2-install-dependencies">Step 2: Install Dependencies</h3>
+<p>Ensure Python and necessary packages are installed:</p>
+<pre><code class="language-bash">pip install -r requirements.txt
+</code></pre>
+<h3 id="step-3-basic-test-environment">Step 3: Basic Test Environment</h3>
+<p>Run a simple Python simulation to verify the installation:</p>
+<pre><code class="language-bash">import numpy as np
 import matplotlib.pyplot as plt
 
 # Simple vehicle motion simulation
@@ -149,32 +161,27 @@ plt.ylabel(&quot;Position (m)&quot;)
 plt.legend()
 plt.grid()
 plt.show()
-
-If the plot appears, your environment is ready.
-
-## Optional Components
-
-### Option 1: Install SUMO
-For SUMO users, install it as follows:
-**Ubuntu:**
-```bash
-sudo apt-get install sumo sumo-tools sumo-doc
-
-**Windows:**
-- Download from [SUMO Official Website](https://sumo.dlr.de)
-- Add SUMO to system PATH
-
-### Option 2: Install VISSIM
-- VISSIM is a commercial tool, and a valid license is required.
-- Install from **PTV Group Website**: [https://www.ptvgroup.com](https://www.ptvgroup.com)
-- Configure the Python COM interface for integration.
-
-### Option 3: Install PyTorch (Optional for AI-based Models)
-For machine learning applications, install PyTorch:
-
-**CPU Version:**
-```bash
-pip install torch torchvision torchaudio
+</code></pre>
+<p>If the plot appears, your environment is ready.</p>
+<h2 id="optional-components">Optional Components</h2>
+<h3 id="option-1-install-sumo">Option 1: Install SUMO</h3>
+<p>For SUMO users, install it as follows:
+<strong>Ubuntu:</strong></p>
+<pre><code class="language-bash">sudo apt-get install sumo sumo-tools sumo-doc
+</code></pre>
+<p><strong>Windows:</strong>
+- Download from <a href="https://sumo.dlr.de">SUMO Official Website</a>
+- Add SUMO to system PATH</p>
+<h3 id="option-2-install-vissim">Option 2: Install VISSIM</h3>
+<ul>
+<li>VISSIM is a commercial tool, and a valid license is required.</li>
+<li>Install from <strong>PTV Group Website</strong>: <a href="https://www.ptvgroup.com">https://www.ptvgroup.com</a></li>
+<li>Configure the Python COM interface for integration.</li>
+</ul>
+<h3 id="option-3-install-pytorch-optional-for-ai-based-models">Option 3: Install PyTorch (Optional for AI-based Models)</h3>
+<p>For machine learning applications, install PyTorch:</p>
+<p><strong>CPU Version:</strong></p>
+<pre><code class="language-bash">pip install torch torchvision torchaudio
 </code></pre>
 <p><strong>GPU Version (with CUDA):</strong></p>
 <pre><code class="language-bash">pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
