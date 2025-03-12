@@ -81,6 +81,15 @@ If you use Open-PAV in your research or projects, please cite the following:
   year={2024},
   organization={Your Institution}
 }
+
+@article{ma2025automated,
+  title={Automated vehicle microscopic energy consumption study (AV-Micro): Data collection and model development},
+  author={Ma, Ke and Zhou, Hang and Liang, Zhaohui and Li, Xiaopeng},
+  journal={Energy},
+  pages={135096},
+  year={2025},
+  publisher={Elsevier}
+}
 ```
 
 ## License
@@ -96,11 +105,9 @@ Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.ed
 
 ### Team Members:
 - Hang Zhou ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
-- Member Name ([LinkedIn](https://linkedin.com/in/member-profile), [GitHub](https://github.com/member-profile))
 
 
 ### External Acknowledgements:
-We would like to thank contributors and collaborators who have supported this project.
-
+We would like to thank the collaborator Jinbiao Huo's effort in this project.
 
 
