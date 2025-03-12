@@ -36,24 +36,9 @@ pip install -r requirements.txt
 
 ### Step 3: Basic Test Environment
 Run a simple Python simulation to verify the installation:
-```bash
-import numpy as np
-import matplotlib.pyplot as plt
+[Quick Start](quick_start.md)Quick Start Example 
 
-# Simple vehicle motion simulation
-t = np.linspace(0, 10, 100)
-velocity = 2 * t  # Linear acceleration
-position = 0.5 * 2 * t**2
-
-plt.plot(t, position, label="Vehicle Position")
-plt.xlabel("Time (s)")
-plt.ylabel("Position (m)")
-plt.legend()
-plt.grid()
-plt.show()
-```
-
-If the plot appears, your environment is ready.
+If this scripts run successfully and the plot appears, your environment is ready.
 
 ## Optional Components
 

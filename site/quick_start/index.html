@@ -98,22 +98,22 @@
 <h2 id="data-preparation">Data Preparation</h2>
 <ul>
 <li>You can <strong>use your own dataset</strong> (LiDAR, images, videos, trajectory data) or  </li>
-<li><strong>Use our pre-collected dataset</strong> available in Open-PAV <a href="../model_download/">Model Download</a> .</li>
+<li><strong>Use our pre-collected dataset</strong> available in Open-PAV <a href="../model_download/">Model Download</a>.</li>
 </ul>
 <p><strong>Vehicle Selection</strong>:<br />
    - Choose a vehicle brand and model (e.g., Tesla, Audi, Benz).</p>
 <p><strong>Model Selection</strong>:<br />
    - Select a simulation model type:<br />
-     - <strong>Basic Linear Model</strong> (linear parameters).<br />
-     - <strong>IDM Model</strong>.<br />
-     - <strong>Wiedemann-99 Model</strong>.<br />
-     - <strong>AI-based model</strong>.  </p>
+     - Basic Linear Model (linear parameters).<br />
+     - IDM Model.<br />
+     - Wiedemann-99 Model.<br />
+     - AI-based model.  </p>
 <p><strong>Simulator File Format Selection</strong>:<br />
    - Choose the output format for your simulator:<br />
-     - <strong>Basic parameters file</strong> (generic format).<br />
-     - <strong>SUMO-compatible file</strong>.<br />
-     - <strong>VISSIM-compatible file</strong>.<br />
-     - <strong>TorchScript package</strong> (for AI-based models).  </p>
+     - Basic parameters file (generic format).<br />
+     - SUMO-compatible file.<br />
+     - VISSIM-compatible file.<br />
+     - TorchScript package (for AI-based models).  </p>
 <h2 id="quick-start-example">Quick Start Example</h2>
 <p>As an example, we provide a <strong>Basic Linear Model for a Tesla</strong>, running in a simple highway simulation.<br />
    You can modify parameters and datasets to experiment with different configurations.  </p>
@@ -139,12 +139,11 @@
    });
    </script>
 
-<p>Then, run the script using Python:
-```html</p>
+<p>Then, run the script using Python:</p>
 <p>
-    <a href="car_following_sim.py" download>
+    <a href="carfollowing_sim_demo.py" download>
         <button style="padding: 10px 15px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
-            📥 Download Python Script
+            Download Python Script
         </button>
     </a>
 </p>
@@ -187,6 +186,8 @@
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

@@ -54,9 +54,21 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Model Calibration</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#supported-models">Supported Models</a>
+    <li class="toctree-l2"><a class="reference internal" href="#three-stage-car-following-model">Three-Stage Car-Following Model</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mathematical-formulation">Mathematical Formulation</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#calibration-steps">Calibration Steps</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hybrid-parameter-calibration-method">Hybrid Parameter Calibration Method</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mathematical-formulation-of-calibration">Mathematical Formulation of Calibration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#calibration-process">Calibration Process</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#supported-models">Supported Models</a>
     </li>
     </ul>
                 </li>
@@ -93,21 +105,95 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="model-calibration">Model Calibration</h1>
-<p>Open-PAV provides tools for calibrating various vehicle kinematic models:</p>
+<p>Open-PAV provides tools for calibrating various vehicle kinematic models to improve the accuracy of automated vehicle behavior simulations.</p>
+<h2 id="three-stage-car-following-model">Three-Stage Car-Following Model</h2>
+<p>The Adaptive Cruise Control (ACC) system in automated vehicles (AVs) consists of two subsystems:</p>
+<ol>
+<li><strong>Upper Command Control System</strong> – Generates acceleration commands based on sensor data.</li>
+<li><strong>Lower Motion Response System</strong> – Regulates acceleration in response to commands.</li>
+</ol>
+<p>To account for real-world system delays, the <strong>Three-Stage Car-Following Model</strong> incorporates:
+- <strong>Stage 1: Sensor Perception Delay ((\eta_{a,1}))</strong> – The time required for the vehicle to detect and process leading vehicle data.
+- <strong>Stage 2: Control Computation Delay ((\eta_{a,2}))</strong> – The time taken to compute acceleration commands.
+- <strong>Stage 3: Vehicle Response Lag ((\eta_b))</strong> – The mechanical delay in executing the acceleration.</p>
+<h3 id="mathematical-formulation"><strong>Mathematical Formulation</strong></h3>
+<p>At any given time ( t ), let:
+- ( p_i(t) ), ( v_i(t) ), and ( a_i(t) ) be the position, velocity, and acceleration of the <strong>following vehicle</strong>.
+- ( p_{i+1}(t) ), ( v_{i+1}(t) ), and ( a_{i+1}(t) ) be the position, velocity, and acceleration of the <strong>preceding vehicle</strong>.
+- ( s_i(t) = (p_i(t), v_i(t), a_i(t)) ) represent the <strong>state</strong> of the following vehicle.</p>
+<p>The command acceleration at time ( t_0 + \eta_{a,1} + \eta_{a,2} ) is computed as:</p>
+<p>$$
+u_i(t_0 + \eta_{a,1} + \eta_{a,2}) = g(v_i(t_0), v_{i+1}(t_0), p_i(t_0), p_{i+1}(t_0); \theta_C)
+$$</p>
+<p>where:
+- ( g(\cdot) ) is a <strong>control law function</strong>.
+- ( \theta_C ) represents the <strong>control parameters</strong> to be calibrated.</p>
+<p>In <strong>Stage 3</strong>, due to the <strong>response lag</strong> ( \eta_b ), the acceleration is modeled as a <strong>first-order system</strong>:</p>
+<p>$$
+\eta_b \frac{d a_i(t)}{dt} + a_i(t) = u_i(t)
+$$</p>
+<p>Thus, the <strong>state-space representation</strong> of the system is:</p>
+<p>$$
+\dot{s}_i(t) = A_i s_i(t) + B_i u_i(t)
+$$</p>
+<p>where:</p>
+<p>$$
+A =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \
+0 &amp; 0 &amp; 1 \
+0 &amp; 0 &amp; -\frac{1}{\eta_b}
+\end{bmatrix}, \quad
+B =
+\begin{bmatrix}
+0 \
+0 \
+\frac{1}{\eta_b}
+\end{bmatrix}
+$$</p>
+<p>The calibrated control function is:</p>
+<p>$$
+u_i(t) = g(v_i(t - \eta_a), v_{i+1}(t - \eta_a), p_i(t - \eta_a), p_{i+1}(t - \eta_a); \theta_C)
+$$</p>
+<p>where ( \eta_a = \eta_{a,1} + \eta_{a,2} ) represents the <strong>total control delay</strong>.</p>
+<hr />
+<h2 id="hybrid-parameter-calibration-method">Hybrid Parameter Calibration Method</h2>
+<p>To calibrate model parameters, Open-PAV implements a <strong>hybrid optimization algorithm</strong> that combines:</p>
+<ol>
+<li><strong>Bayesian Optimization (BO)</strong> – Efficient global search for optimal delay parameters ((\eta_a, \eta_b)).</li>
+<li><strong>Simultaneous Perturbation Stochastic Approximation (SPSA)</strong> – Fast local optimization for control gains ((\theta_C)).</li>
+</ol>
+<h3 id="mathematical-formulation-of-calibration"><strong>Mathematical Formulation of Calibration</strong></h3>
+<p>The calibration problem is defined as an <strong>optimization problem</strong>:</p>
+<p>$$
+\min_{\theta} f(\theta, D^{m}, D^{r})
+$$</p>
+<p>where:
+- ( \theta ) is the <strong>parameter set to be calibrated</strong>.
+- ( D^m ) is the <strong>model-predicted vehicle states</strong>.
+- ( D^r ) is the <strong>real-world vehicle data</strong>.</p>
+<p>The objective function ( f(\cdot) ) is based on the <strong>Root Mean Square Error (RMSE)</strong>:</p>
+<p>$$
+f(\theta, D^{m}, D^{r}) = \sqrt{\frac{1}{N} \sum_{j=1}^{N} \left( a_{i,m}(t_j | \theta) - a_{i,r}(t_j) \right)^2 }
+$$</p>
+<p>where:
+- ( a_{i,m}(t_j | \theta) ) is the <strong>model-predicted acceleration</strong>.
+- ( a_{i,r}(t_j) ) is the <strong>real observed acceleration</strong> at time ( t_j ).</p>
+<h3 id="calibration-process"><strong>Calibration Process</strong></h3>
+<ol>
+<li><strong>Data Input</strong> – Load collected vehicle trajectory data.</li>
+<li><strong>Parameter Adjustment</strong> – Optimize both delay and control parameters using BO + SPSA.</li>
+<li><strong>Validation</strong> – Compare calibrated model outputs with real-world observations.</li>
+<li><strong>Export</strong> – Save parameters in a compatible format for SUMO, VISSIM, or other simulators.</li>
+</ol>
+<hr />
 <h2 id="supported-models">Supported Models</h2>
 <ul>
-<li><strong>Linear Models</strong>: Suitable for basic simulations.</li>
-<li><strong>IDM Models</strong>: Ideal for SUMO simulations.</li>
-<li><strong>Wiedemann-99</strong>: Compatible with Vissim.</li>
-<li><strong>Machine Learning-Based Models</strong>: For advanced simulations.</li>
+<li><strong>Linear Models</strong> – Suitable for basic simulations.</li>
+<li><strong>IDM Models</strong> – Ideal for SUMO simulations.</li>
+<li><strong>Wiedemann-99</strong> – Compatible with VISSIM.</li>
+<li><strong>Machine Learning-Based Models</strong> – For advanced simulations.</li>
 </ul>
-<h2 id="calibration-steps">Calibration Steps</h2>
-<ol>
-<li><strong>Data Input</strong>: Load your collected data into the calibration tool.</li>
-<li><strong>Parameter Adjustment</strong>: Adjust model parameters to fit the data.</li>
-<li><strong>Validation</strong>: Validate the calibrated model against a test dataset.</li>
-<li><strong>Export</strong>: Export the calibrated parameters for simulation use.</li>
-</ol>
 <p>For detailed calibration procedures, refer to the <a href="developer_guide.md">Developer Guide</a>.</p>
               
             </div>
@@ -148,6 +234,8 @@
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

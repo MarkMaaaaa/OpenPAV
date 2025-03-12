@@ -146,23 +146,9 @@ cd OpenPAV
 <pre><code class="language-bash">pip install -r requirements.txt
 </code></pre>
 <h3 id="step-3-basic-test-environment">Step 3: Basic Test Environment</h3>
-<p>Run a simple Python simulation to verify the installation:</p>
-<pre><code class="language-bash">import numpy as np
-import matplotlib.pyplot as plt
-
-# Simple vehicle motion simulation
-t = np.linspace(0, 10, 100)
-velocity = 2 * t  # Linear acceleration
-position = 0.5 * 2 * t**2
-
-plt.plot(t, position, label=&quot;Vehicle Position&quot;)
-plt.xlabel(&quot;Time (s)&quot;)
-plt.ylabel(&quot;Position (m)&quot;)
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
-<p>If the plot appears, your environment is ready.</p>
+<p>Run a simple Python simulation to verify the installation:
+<a href="../quick_start/">Quick Start</a>Quick Start Example </p>
+<p>If this scripts run successfully and the plot appears, your environment is ready.</p>
 <h2 id="optional-components">Optional Components</h2>
 <h3 id="option-1-install-sumo">Option 1: Install SUMO</h3>
 <p>For SUMO users, install it as follows:
@@ -226,6 +212,8 @@ plt.show()
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
