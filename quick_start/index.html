@@ -88,28 +88,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><strong>3. <code>quick_start.md</code></strong></p>
-<p>```markdown</p>
-<h1 id="quick-start">Quick Start</h1>
+                <h1 id="quick-start">Quick Start</h1>
 <p>Get started with Open-PAV by following these steps:</p>
-<ol>
-<li>
 <p><strong>Installation</strong>: Ensure Open-PAV is installed on your system. Refer to the <a href="../installation/">Installation Guide</a> for instructions.</p>
-</li>
-<li>
-<p><strong>Data Preparation</strong>: Prepare your datasets (LiDAR, images, videos, trajectories) and place them in the appropriate directories.</p>
-</li>
-<li>
-<p><strong>Model Selection</strong>: Choose the desired vehicle model (e.g., Tesla, Audi, Benz) and the corresponding kinematic model (e.g., IDM, linear model, machine learning model).</p>
-</li>
-<li>
-<p><strong>Model Calibration</strong>: Use the provided tools to calibrate the selected model with your data.</p>
-</li>
-<li>
-<p><strong>Simulation Integration</strong>: Export the calibrated model parameters and integrate them into your preferred simulation platform (e.g., SUMO, Vissim).</p>
-</li>
-</ol>
-<p>For more detailed instructions, consult the <a href="user_guide.md">User Guide</a>.</p>
+<p><strong>Data Preparation</strong>:<br />
+   - You can <strong>use your own dataset</strong> (LiDAR, images, videos, trajectory data) or<br />
+   - <strong>Use our pre-collected dataset</strong> available in Open-PAV <a href="../model_download/">Model Download</a> .</p>
+<p><strong>Vehicle Selection</strong>:<br />
+   - Choose a vehicle brand and model (e.g., Tesla, Audi, Benz).</p>
+<p><strong>Model Selection</strong>:<br />
+   - Select a simulation model type:<br />
+     - <strong>Basic Linear Model</strong> (linear parameters).<br />
+     - <strong>IDM Model</strong>.<br />
+     - <strong>Wiedemann-99 Model</strong>.<br />
+     - <strong>AI-based model</strong>.  </p>
+<p><strong>Simulator File Format Selection</strong>:<br />
+   - Choose the output format for your simulator:<br />
+     - <strong>Basic parameters file</strong> (generic format).<br />
+     - <strong>SUMO-compatible file</strong>.<br />
+     - <strong>VISSIM-compatible file</strong>.<br />
+     - <strong>TorchScript package</strong> (for AI-based models).  </p>
+<p><strong>Quick Start Example</strong>:<br />
+      As an example, we provide a <strong>Basic Linear Model for a Tesla</strong>, running in a simple highway simulation.<br />
+   You can modify parameters and datasets to experiment with different configurations.  </p>
+<p><strong>Download Example Configuration File:</strong><br />
+   <button id="downloadButton">Download Configuration</button></p>
+<script>
+   document.getElementById("downloadButton").addEventListener("click", function () {
+       const data = {
+           "vehicle": "Audi A4",
+           "model": "Linear",
+           "filetype": "Original",
+           "parameter": "kv=1.35, kg=2, td=2, z=-0.5",
+           "timestamp": new Date().toISOString()
+       };
+       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+       const url = window.URL.createObjectURL(blob);
+       const link = document.createElement('a');
+       link.href = url;
+       link.download = "openpav_config.json";
+       document.body.appendChild(link);
+       link.click();
+       window.URL.revokeObjectURL(url);
+   });
+   </script>
               
             </div>
           </div><footer>
