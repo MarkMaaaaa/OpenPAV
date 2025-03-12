@@ -81,7 +81,6 @@ If you use Open-PAV in your research or projects, please cite the following:
   year={2024},
   organization={Your Institution}
 }
-
 @article{zhou2024unified,
   title={A unified longitudinal trajectory dataset for automated vehicle},
   author={Zhou, Hang and Ma, Ke and Liang, Shixiao and Li, Xiaopeng and Qu, Xiaobo},
@@ -92,7 +91,6 @@ If you use Open-PAV in your research or projects, please cite the following:
   year={2024},
   publisher={Nature Publishing Group UK London}
 }
-
 @article{ma2025automated,
   title={Automated vehicle microscopic energy consumption study (AV-Micro): Data collection and model development},
   author={Ma, Ke and Zhou, Hang and Liang, Zhaohui and Li, Xiaopeng},
