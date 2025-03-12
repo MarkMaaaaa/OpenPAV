@@ -50,6 +50,10 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Quick Start</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#data-preparation">Data Preparation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#quick-start-example">Quick Start Example</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -91,9 +95,11 @@
                 <h1 id="quick-start">Quick Start</h1>
 <p>Get started with Open-PAV by following these steps:</p>
 <p><strong>Installation</strong>: Ensure Open-PAV is installed on your system. Refer to the <a href="../installation/">Installation Guide</a> for instructions.</p>
-<p><strong>Data Preparation</strong>:<br />
-   - You can <strong>use your own dataset</strong> (LiDAR, images, videos, trajectory data) or<br />
-   - <strong>Use our pre-collected dataset</strong> available in Open-PAV <a href="../model_download/">Model Download</a> .</p>
+<h2 id="data-preparation">Data Preparation</h2>
+<ul>
+<li>You can <strong>use your own dataset</strong> (LiDAR, images, videos, trajectory data) or  </li>
+<li><strong>Use our pre-collected dataset</strong> available in Open-PAV <a href="../model_download/">Model Download</a> .</li>
+</ul>
 <p><strong>Vehicle Selection</strong>:<br />
    - Choose a vehicle brand and model (e.g., Tesla, Audi, Benz).</p>
 <p><strong>Model Selection</strong>:<br />
@@ -108,8 +114,8 @@
      - <strong>SUMO-compatible file</strong>.<br />
      - <strong>VISSIM-compatible file</strong>.<br />
      - <strong>TorchScript package</strong> (for AI-based models).  </p>
-<p><strong>Quick Start Example</strong>:<br />
-      As an example, we provide a <strong>Basic Linear Model for a Tesla</strong>, running in a simple highway simulation.<br />
+<h2 id="quick-start-example">Quick Start Example</h2>
+<p>As an example, we provide a <strong>Basic Linear Model for a Tesla</strong>, running in a simple highway simulation.<br />
    You can modify parameters and datasets to experiment with different configurations.  </p>
 <p><strong>Download Example Configuration File:</strong><br />
    <button id="downloadButton">Download Configuration</button></p>
@@ -132,6 +138,16 @@
        window.URL.revokeObjectURL(url);
    });
    </script>
+
+<p>Then, run the script using Python:
+```html</p>
+<p>
+    <a href="car_following_sim.py" download>
+        <button style="padding: 10px 15px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
+            Download Python Script
+        </button>
+    </a>
+</p>
               
             </div>
           </div><footer>
