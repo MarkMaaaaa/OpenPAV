@@ -57,7 +57,7 @@ Then, run the script using Python:
 <p>
     <a href="car_following_sim.py" download>
         <button style="padding: 10px 15px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
-            📥 Download Python Script
+            Download Python Script
         </button>
     </a>
 </p>
