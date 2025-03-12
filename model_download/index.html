@@ -104,9 +104,10 @@
   <label for="algorithm">Select Algorithm Model:</label>
   <select id="algorithm" required>
     <option value="">--Select--</option>
-    <option value="IDM">Intelligent Driver Model (IDM)</option>
     <option value="Linear">Linear Model</option>
-    <option value="ML">Machine Learning Model</option>
+    <option value="IDM">Intelligent Driver Model (IDM)</option>
+    <option value="Wiedemann-99">Wiedemann-99</option>
+    <option value="AI-based Model">AI-based Model</option>
   </select>
 
   <br/><br/>
@@ -117,11 +118,12 @@
     <option value="Original">Original Parameters</option>
     <option value="Vissim">Vissim Parameters</option>
     <option value="SUMO">SUMO Parameters</option>
+    <option value="TorchScript">AI-based Parameters</option>
   </select>
 
   <br/><br/>
 
-  <button type="submit">Generate and Download</button>
+  <button type="submit">Download</button>
 </form>
 
 <script>
