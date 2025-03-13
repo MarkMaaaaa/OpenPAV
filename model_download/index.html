@@ -97,6 +97,7 @@
     <option value="Tesla">Tesla</option>
     <option value="Audi">Audi</option>
     <option value="BMW">BMW</option>
+    <option value="General">All Models</option>
   </select>
 
   <br/><br/>
@@ -112,23 +113,13 @@
   <select id="algorithm" required>
     <option value="">--Select--</option>
     <option value="Linear">Basic Linear Model</option>
-    <option value="IDM">Intelligent Driver Model (IDM)</option>
-    <option value="Wiedemann-99">Wiedemann-99</option>
+    <option value="IDM">IDM for SUMO</option>
+    <option value="Wiedemann-99">Wiedemann-99 for Vissim</option>
     <option value="AI-based Model">AI-based Model</option>
   </select>
 
   <br/><br/>
 
-  <label for="filetype">Select Parameter File Type:</label>
-  <select id="filetype" required>
-    <option value="">--Select--</option>
-    <option value="Original">Original Parameters</option>
-    <option value="Vissim">Vissim Parameters</option>
-    <option value="SUMO">SUMO Parameters</option>
-    <option value="TorchScript">AI-based Parameters</option>
-  </select>
-
-  <br/><br/>
 
   <button type="submit">Download</button>
 </form>
@@ -136,8 +127,8 @@
 <script>
 const vehicleModels = {
   "Tesla": ["Model 3", "Model S", "Model X"],
-  "Audi": ["A4 Avant", "A6", "A8", "E-tron"],
-  "BMW": ["X5", "I3 S"],
+  "Audi": ["A4", "A6", "A8", "E-tron"],
+  "BMW": ["X5", "I3"],
   "Mercedes-Benz": ["A-Class", "GLE 450 4Matic"],
   "Ford": ["Fusion", "S-Max"],
   "Waymo": ["Self-Driving Car"],
