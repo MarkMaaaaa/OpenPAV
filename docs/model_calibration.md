@@ -1,10 +1,10 @@
 # Model Calibration
 
-Open-PAV provides tools for calibrating various vehicle kinematic models to improve the accuracy of automated vehicle behavior simulations.
+Open-PAV provides tools for calibrating various physical vehicle dynamics models to improve the accuracy of PAV behavior simulations.
 
 ## Three-Stage Car-Following Model
 
-The Adaptive Cruise Control (ACC) system in automated vehicles (AVs) consists of two subsystems:
+The Adaptive Cruise Control (ACC) system in PAV consists of two subsystems:
 
 1. **Upper Command Control System** – Generates acceleration commands based on sensor data.
 2. **Lower Motion Response System** – Regulates acceleration in response to commands.

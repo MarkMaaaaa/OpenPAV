@@ -53,11 +53,5 @@ Get started with Open-PAV by following these steps:
    </script>
 
 Then, run the script using Python:
+📥 **[Download Python Script](carfollowing_sim_demo.py)**
 
-<p>
-    <a href="carfollowing_sim_demo.py" download>
-        <button style="padding: 10px 15px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
-            Download Python Script
-        </button>
-    </a>
-</p>

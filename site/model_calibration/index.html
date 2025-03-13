@@ -105,80 +105,80 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="model-calibration">Model Calibration</h1>
-<p>Open-PAV provides tools for calibrating various vehicle kinematic models to improve the accuracy of automated vehicle behavior simulations.</p>
+<p>Open-PAV provides tools for calibrating various physical vehicle dynamics models to improve the accuracy of PAV behavior simulations.</p>
 <h2 id="three-stage-car-following-model">Three-Stage Car-Following Model</h2>
-<p>The Adaptive Cruise Control (ACC) system in automated vehicles (AVs) consists of two subsystems:</p>
+<p>The Adaptive Cruise Control (ACC) system in PAV consists of two subsystems:</p>
 <ol>
 <li><strong>Upper Command Control System</strong> – Generates acceleration commands based on sensor data.</li>
 <li><strong>Lower Motion Response System</strong> – Regulates acceleration in response to commands.</li>
 </ol>
 <p>To account for real-world system delays, the <strong>Three-Stage Car-Following Model</strong> incorporates:
-- <strong>Stage 1: Sensor Perception Delay ((\eta_{a,1}))</strong> – The time required for the vehicle to detect and process leading vehicle data.
-- <strong>Stage 2: Control Computation Delay ((\eta_{a,2}))</strong> – The time taken to compute acceleration commands.
-- <strong>Stage 3: Vehicle Response Lag ((\eta_b))</strong> – The mechanical delay in executing the acceleration.</p>
+- <strong>Stage 1: Sensor Perception Delay (<span class="arithmatex">\(\eta_{a,1}\)</span>)</strong> – The time required for the vehicle to detect and process leading vehicle data.
+- <strong>Stage 2: Control Computation Delay (<span class="arithmatex">\(\eta_{a,2}\)</span>)</strong> – The time taken to compute acceleration commands.
+- <strong>Stage 3: Vehicle Response Lag (<span class="arithmatex">\(\eta_b\)</span>)</strong> – The mechanical delay in executing the acceleration.</p>
 <h3 id="mathematical-formulation"><strong>Mathematical Formulation</strong></h3>
-<p>At any given time ( t ), let:
-- ( p_i(t) ), ( v_i(t) ), and ( a_i(t) ) be the position, velocity, and acceleration of the <strong>following vehicle</strong>.
-- ( p_{i+1}(t) ), ( v_{i+1}(t) ), and ( a_{i+1}(t) ) be the position, velocity, and acceleration of the <strong>preceding vehicle</strong>.
-- ( s_i(t) = (p_i(t), v_i(t), a_i(t)) ) represent the <strong>state</strong> of the following vehicle.</p>
-<p>The command acceleration at time ( t_0 + \eta_{a,1} + \eta_{a,2} ) is computed as:</p>
-<p>$$
+<p>At any given time <span class="arithmatex">\( t \)</span>, let:
+- <span class="arithmatex">\( p_i(t) \)</span>, <span class="arithmatex">\( v_i(t) \)</span>, and <span class="arithmatex">\( a_i(t) \)</span> be the position, velocity, and acceleration of the <strong>following vehicle</strong>.
+- <span class="arithmatex">\( p_{i+1}(t) \)</span>, <span class="arithmatex">\( v_{i+1}(t) \)</span>, and <span class="arithmatex">\( a_{i+1}(t) \)</span> be the position, velocity, and acceleration of the <strong>preceding vehicle</strong>.
+- <span class="arithmatex">\( s_i(t) = (p_i(t), v_i(t), a_i(t)) \)</span> represent the <strong>state</strong> of the following vehicle.</p>
+<p>The command acceleration at time <span class="arithmatex">\( t_0 + \eta_{a,1} + \eta_{a,2} \)</span> is computed as:</p>
+<div class="arithmatex">\[
 u_i(t_0 + \eta_{a,1} + \eta_{a,2}) = g(v_i(t_0), v_{i+1}(t_0), p_i(t_0), p_{i+1}(t_0); \theta_C)
-$$</p>
+\]</div>
 <p>where:
-- ( g(\cdot) ) is a <strong>control law function</strong>.
-- ( \theta_C ) represents the <strong>control parameters</strong> to be calibrated.</p>
-<p>In <strong>Stage 3</strong>, due to the <strong>response lag</strong> ( \eta_b ), the acceleration is modeled as a <strong>first-order system</strong>:</p>
-<p>$$
+- <span class="arithmatex">\( g(\cdot) \)</span> is a <strong>control law function</strong>.
+- <span class="arithmatex">\( \theta_C \)</span> represents the <strong>control parameters</strong> to be calibrated.</p>
+<p>In <strong>Stage 3</strong>, due to the <strong>response lag</strong> <span class="arithmatex">\( \eta_b \)</span>, the acceleration is modeled as a <strong>first-order system</strong>:</p>
+<div class="arithmatex">\[
 \eta_b \frac{d a_i(t)}{dt} + a_i(t) = u_i(t)
-$$</p>
+\]</div>
 <p>Thus, the <strong>state-space representation</strong> of the system is:</p>
-<p>$$
+<div class="arithmatex">\[
 \dot{s}_i(t) = A_i s_i(t) + B_i u_i(t)
-$$</p>
+\]</div>
 <p>where:</p>
-<p>$$
+<div class="arithmatex">\[
 A =
 \begin{bmatrix}
-0 &amp; 1 &amp; 0 \
-0 &amp; 0 &amp; 1 \
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
 0 &amp; 0 &amp; -\frac{1}{\eta_b}
 \end{bmatrix}, \quad
 B =
 \begin{bmatrix}
-0 \
-0 \
+0 \\
+0 \\
 \frac{1}{\eta_b}
 \end{bmatrix}
-$$</p>
+\]</div>
 <p>The calibrated control function is:</p>
-<p>$$
+<div class="arithmatex">\[
 u_i(t) = g(v_i(t - \eta_a), v_{i+1}(t - \eta_a), p_i(t - \eta_a), p_{i+1}(t - \eta_a); \theta_C)
-$$</p>
-<p>where ( \eta_a = \eta_{a,1} + \eta_{a,2} ) represents the <strong>total control delay</strong>.</p>
+\]</div>
+<p>where <span class="arithmatex">\( \eta_a = \eta_{a,1} + \eta_{a,2} \)</span> represents the <strong>total control delay</strong>.</p>
 <hr />
 <h2 id="hybrid-parameter-calibration-method">Hybrid Parameter Calibration Method</h2>
 <p>To calibrate model parameters, Open-PAV implements a <strong>hybrid optimization algorithm</strong> that combines:</p>
 <ol>
-<li><strong>Bayesian Optimization (BO)</strong> – Efficient global search for optimal delay parameters ((\eta_a, \eta_b)).</li>
-<li><strong>Simultaneous Perturbation Stochastic Approximation (SPSA)</strong> – Fast local optimization for control gains ((\theta_C)).</li>
+<li><strong>Bayesian Optimization (BO)</strong> – Efficient global search for optimal delay parameters (<span class="arithmatex">\(\eta_a, \eta_b\)</span>).</li>
+<li><strong>Simultaneous Perturbation Stochastic Approximation (SPSA)</strong> – Fast local optimization for control gains (<span class="arithmatex">\(\theta_C\)</span>).</li>
 </ol>
 <h3 id="mathematical-formulation-of-calibration"><strong>Mathematical Formulation of Calibration</strong></h3>
 <p>The calibration problem is defined as an <strong>optimization problem</strong>:</p>
-<p>$$
+<div class="arithmatex">\[
 \min_{\theta} f(\theta, D^{m}, D^{r})
-$$</p>
+\]</div>
 <p>where:
-- ( \theta ) is the <strong>parameter set to be calibrated</strong>.
-- ( D^m ) is the <strong>model-predicted vehicle states</strong>.
-- ( D^r ) is the <strong>real-world vehicle data</strong>.</p>
-<p>The objective function ( f(\cdot) ) is based on the <strong>Root Mean Square Error (RMSE)</strong>:</p>
-<p>$$
+- <span class="arithmatex">\( \theta \)</span> is the <strong>parameter set to be calibrated</strong>.
+- <span class="arithmatex">\( D^m \)</span> is the <strong>model-predicted vehicle states</strong>.
+- <span class="arithmatex">\( D^r \)</span> is the <strong>real-world vehicle data</strong>.</p>
+<p>The objective function <span class="arithmatex">\( f(\cdot) \)</span> is based on the <strong>Root Mean Square Error (RMSE)</strong>:</p>
+<div class="arithmatex">\[
 f(\theta, D^{m}, D^{r}) = \sqrt{\frac{1}{N} \sum_{j=1}^{N} \left( a_{i,m}(t_j | \theta) - a_{i,r}(t_j) \right)^2 }
-$$</p>
+\]</div>
 <p>where:
-- ( a_{i,m}(t_j | \theta) ) is the <strong>model-predicted acceleration</strong>.
-- ( a_{i,r}(t_j) ) is the <strong>real observed acceleration</strong> at time ( t_j ).</p>
+- <span class="arithmatex">\( a_{i,m}(t_j | \theta) \)</span> is the <strong>model-predicted acceleration</strong>.
+- <span class="arithmatex">\( a_{i,r}(t_j) \)</span> is the <strong>real observed acceleration</strong> at time <span class="arithmatex">\( t_j \)</span>.</p>
 <h3 id="calibration-process"><strong>Calibration Process</strong></h3>
 <ol>
 <li><strong>Data Input</strong> – Load collected vehicle trajectory data.</li>
@@ -194,7 +194,6 @@ $$</p>
 <li><strong>Wiedemann-99</strong> – Compatible with VISSIM.</li>
 <li><strong>Machine Learning-Based Models</strong> – For advanced simulations.</li>
 </ul>
-<p>For detailed calibration procedures, refer to the <a href="developer_guide.md">Developer Guide</a>.</p>
               
             </div>
           </div><footer>

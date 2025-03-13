@@ -60,7 +60,29 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#supported-platforms">Supported Platforms</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#integration-steps">Integration Steps</a>
+    <li class="toctree-l2"><a class="reference internal" href="#python-based-basic-model">Python-Based Basic Model</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-simulation">Example Simulation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sumo-integration">SUMO Integration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#steps-to-integrate-idm-in-sumo">Steps to Integrate IDM in SUMO</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vissim-integration-wiedemann-99-model">VISSIM Integration (Wiedemann-99 Model)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#steps-to-integrate-wiedemann-99-in-vissim">Steps to Integrate Wiedemann-99 in VISSIM</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ai-based-model-integration-torchscript">AI-Based Model Integration (TorchScript)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#steps-to-deploy-ai-based-car-following-models">Steps to Deploy AI-Based Car-Following Models</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -93,21 +115,99 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="simulation-integration">Simulation Integration</h1>
-<p>Integrate Open-PAV with various simulation platforms to simulate automated vehicle behaviors:</p>
+<p>Integrate Open-PAV with various simulation platforms to analyze automated vehicle behaviors.</p>
 <h2 id="supported-platforms">Supported Platforms</h2>
 <ul>
-<li><strong>SUMO</strong>: Use IDM models with pre-configured parameters.</li>
-<li><strong>Vissim</strong>: Utilize Wiedemann-99 models for accurate simulations.</li>
-<li><strong>Other Platforms</strong>: Custom integration supported via exported model parameters.</li>
+<li><strong>Python-Based Basic Model</strong>: Simulate simple car-following behavior using a basic linear model.</li>
+<li><strong>SUMO</strong>: Implement Intelligent Driver Model (IDM) for SUMO-based simulations.</li>
+<li><strong>VISSIM</strong>: Implement Wiedemann-99 models with external driver models.</li>
+<li><strong>TorchScript (AI-Based Models)</strong>: Deploy deep learning-based car-following models using PyTorch.</li>
 </ul>
-<h2 id="integration-steps">Integration Steps</h2>
+<hr />
+<h2 id="python-based-basic-model">Python-Based Basic Model</h2>
+<p>A <strong>Basic Linear Model</strong> can be implemented using the following car-following equation:</p>
+<div class="arithmatex">\[
+a = k_v (v_l - v_f) + k_g (p_l - p_f - v_f \cdot T_d) + z
+\]</div>
+<p>where:
+- <span class="arithmatex">\( v_l, v_f \)</span> = velocities of the lead and following vehicle.
+- <span class="arithmatex">\( p_l, p_f \)</span> = positions of the lead and following vehicle.
+- <span class="arithmatex">\( T_d \)</span> = time delay.
+- <span class="arithmatex">\( k_v, k_g, z \)</span> = model parameters.</p>
+<h3 id="example-simulation"><strong>Example Simulation</strong></h3>
+<p>Below is a plot of a simple highway simulation where a <strong>Tesla follows a lead vehicle</strong>.</p>
+<p>![Basic Model Simulation]</p>
+<p>To run the simulation:
+refer to <a href="../quick_start/">Quick Start</a></p>
+<hr />
+<h2 id="sumo-integration">SUMO Integration</h2>
+<p>The <strong>Intelligent Driver Model (IDM)</strong> is supported in SUMO for car-following simulations.</p>
+<h3 id="steps-to-integrate-idm-in-sumo"><strong>Steps to Integrate IDM in SUMO</strong></h3>
 <ol>
-<li><strong>Model Calibration</strong>: Ensure your vehicle model is calibrated. Refer to the <a href="../model_calibration/">Model Calibration Guide</a>.</li>
-<li><strong>Parameter Export</strong>: Export the calibrated parameters in the required format (e.g., original parameters, Vissim parameter file, SUMO parameter file).</li>
-<li><strong>Simulation Setup</strong>: Import the parameters into your simulation platform.</li>
-<li><strong>Execution</strong>: Run the simulation to analyze vehicle behaviors.</li>
+<li><strong>Install SUMO</strong> if not already installed:
+   <code>bash
+   sudo apt-get install sumo sumo-tools sumo-doc  # Ubuntu</code></li>
+<li><strong>Prepare SUMO Configuration:</strong></li>
+<li>Open the <strong>SUMO configuration file</strong> and add the IDM car-following model.
+   <code>xml
+   &lt;vType id="IDM" accel="XX" decel="XX" sigma="XX" length="5" minGap="2.5" maxSpeed="33.3" guiShape="passenger"/&gt;</code></li>
+<li><strong>Assign the IDM Model</strong> to Vehicles:
+   <code>xml
+   &lt;vehicle id="veh0" type="IDM" route="route0" depart="0" /&gt;</code></li>
+<li><strong>Run SUMO Simulation</strong>:
+   <code>bash
+   sumo -c simulation.sumocfg</code></li>
 </ol>
-<p>For comprehensive integration instructions, see the <a href="developer_guide.md">Developer Guide</a>.</p>
+<p>🔗 <a href="https://sumo.dlr.de/docs/Developer/How_To/Car-Following_Model.html">More details on IDM in SUMO</a></p>
+<hr />
+<h2 id="vissim-integration-wiedemann-99-model">VISSIM Integration (Wiedemann-99 Model)</h2>
+<p>VISSIM supports the <strong>Wiedemann-99 car-following model</strong>, allowing for <strong>custom driver models</strong>.</p>
+<h3 id="steps-to-integrate-wiedemann-99-in-vissim"><strong>Steps to Integrate Wiedemann-99 in VISSIM</strong></h3>
+<ol>
+<li><strong>Open PTV VISSIM</strong>.</li>
+<li><strong>Build the road network</strong> and configure the simulation.</li>
+<li><strong>Set Personalized Driving Model</strong>:</li>
+<li>Open <strong>Visual Studio</strong> and compile the driver model:
+     <code>bash
+     Open car_follow_model.vcxproj and build</code></li>
+<li>This generates a <strong>DriverModel.dll</strong> file.</li>
+<li><strong>Load the Driver Model in VISSIM</strong>:</li>
+<li>Open the <strong>Vehicle Types</strong> interface.</li>
+<li>Add four vehicle types and link the <strong>DLL file</strong>.</li>
+<li>Set <strong>External Driver Model</strong> and browse to the <code>DriverModel.dll</code> file.</li>
+<li><strong>Run the Simulation</strong>:</li>
+<li>Configure evaluation settings in <strong>Evaluation-Configuration</strong>.</li>
+<li>Start the VISSIM simulation.</li>
+</ol>
+<p>🔗 <a href="https://www.ptvgroup.com">Official Wiedemann-99 Documentation</a></p>
+<hr />
+<h2 id="ai-based-model-integration-torchscript">AI-Based Model Integration (TorchScript)</h2>
+<p>For deep learning-based models, Open-PAV supports <strong>TorchScript inference models</strong>.</p>
+<h3 id="steps-to-deploy-ai-based-car-following-models"><strong>Steps to Deploy AI-Based Car-Following Models</strong></h3>
+<ol>
+<li><strong>Train a Neural Network-Based Model</strong> using PyTorch.
+   ```python
+   import torch</li>
+</ol>
+<p>class CarFollowingModel(torch.nn.Module):
+       def <strong>init</strong>(self):
+           super().<strong>init</strong>()
+           self.linear = torch.nn.Linear(4, 1)</p>
+<pre><code>   def forward(self, x):
+       return self.linear(x)
+</code></pre>
+<p>model = CarFollowingModel()
+   torch.save(model, "car_following_model.pt")
+   <code>2. **Convert to TorchScript for Deployment**:</code>python
+   model = torch.jit.script(model)
+   model.save("car_following_model_scripted.pt")
+   <code>3. **Run AI-Based Simulation**:</code>python
+   model = torch.jit.load("car_following_model_scripted.pt")
+   input_data = torch.tensor([[v_l, v_f, p_l, p_f]])  # Example inputs
+   predicted_acceleration = model(input_data)
+   ```</p>
+<p>This approach allows <strong>AI-enhanced car-following models</strong> to be deployed efficiently.</p>
+<hr />
               
             </div>
           </div><footer>

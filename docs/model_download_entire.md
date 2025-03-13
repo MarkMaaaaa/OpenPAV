@@ -9,6 +9,17 @@ Use the form below to select your vehicle **brand** and **model**, along with th
     <option value="Tesla">Tesla</option>
     <option value="Audi">Audi</option>
     <option value="BMW">BMW</option>
+    <option value="Mercedes-Benz">Mercedes-Benz</option>
+    <option value="Ford">Ford</option>
+    <option value="Waymo">Waymo</option>
+    <option value="Toyota">Toyota</option>
+    <option value="KIA">KIA</option>
+    <option value="Hyundai">Hyundai</option>
+    <option value="Mitsubishi">Mitsubishi</option>
+    <option value="Peugeot">Peugeot</option>
+    <option value="Jaguar">Jaguar</option>
+    <option value="Mazda">Mazda</option>
+    <option value="Lincoln">Lincoln</option>
     <option value="General">All Models</option>
   </select>
 
