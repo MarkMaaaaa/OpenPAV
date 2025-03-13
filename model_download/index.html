@@ -89,7 +89,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="vehicle-and-model-selection">Vehicle and Model Selection</h1>
-<p>Use the form below to select your vehicle <strong>brand</strong> and <strong>model</strong>, along with the desired <strong>algorithm model</strong> and <strong>file type</strong>. The generated file will be available for download.</p>
+<p>Use the form below to select your vehicle <strong>brand</strong> and <strong>model</strong>. Then, click the corresponding download button to get the parameter file.</p>
 <form id="modelForm">
   <label for="brand">Select Vehicle Brand:</label>
   <select id="brand" required onchange="updateModels()">
@@ -103,25 +103,15 @@
   <br/><br/>
 
   <label for="vehicle">Select Vehicle Model:</label>
-  <select id="vehicle" required>
+  <select id="vehicle" required onchange="updateDownloadButtons()">
     <option value="">--Select a Brand First--</option>
   </select>
 
   <br/><br/>
 
-  <label for="algorithm">Select Algorithm Model:</label>
-  <select id="algorithm" required>
-    <option value="">--Select--</option>
-    <option value="Linear">Basic Linear Model</option>
-    <option value="IDM">IDM for SUMO</option>
-    <option value="Wiedemann-99">Wiedemann-99 for Vissim</option>
-    <option value="AI-based Model">AI-based Model</option>
-  </select>
-
-  <br/><br/>
-
-
-  <button type="submit">Download</button>
+  <div id="downloadButtons">
+    <!-- Download buttons will be inserted here dynamically -->
+  </div>
 </form>
 
 <script>
@@ -129,17 +119,6 @@ const vehicleModels = {
   "Tesla": ["Model 3", "Model S", "Model X"],
   "Audi": ["A4", "A6", "A8", "E-tron"],
   "BMW": ["X5", "I3"],
-  "Mercedes-Benz": ["A-Class", "GLE 450 4Matic"],
-  "Ford": ["Fusion", "S-Max"],
-  "Waymo": ["Self-Driving Car"],
-  "Toyota": ["Rav 4", "Corolla"],
-  "KIA": ["Niro"],
-  "Hyundai": ["Ioniq Hybrid"],
-  "Mitsubishi": ["SpaceStar", "Outlander PHEV"],
-  "Peugeot": ["5008 GT Line"],
-  "Jaguar": ["I-Pace"],
-  "Mazda": ["Mazda 3"],
-  "Lincoln": ["MKZ"],
   "General": ["All Available Models"]
 };
 
@@ -153,7 +132,7 @@ function updateModels() {
   if (brand && vehicleModels[brand]) {
     vehicleModels[brand].forEach(model => {
       const option = document.createElement("option");
-      option.value = model;
+      option.value = model.toLowerCase().replace(" ", "_"); // Ensure consistency with file naming
       option.textContent = model;
       vehicleSelect.appendChild(option);
     });
@@ -165,33 +144,41 @@ function updateModels() {
   }
 }
 
-document.getElementById('modelForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
+function updateDownloadButtons() {
+  const vehicle = document.getElementById("vehicle").value;
+  const downloadContainer = document.getElementById("downloadButtons");
 
-  const brand = document.getElementById('brand').value;
-  const vehicle = document.getElementById('vehicle').value;
-  const algorithm = document.getElementById('algorithm').value;
-  const filetype = document.getElementById('filetype').value;
+  // Clear previous buttons
+  downloadContainer.innerHTML = "";
 
-  // Prepare data
-  const data = {
-    brand: brand,
-    vehicle: vehicle,
-    algorithm: algorithm,
-    filetype: filetype,
-    timestamp: new Date().toISOString()
-  };
+  if (vehicle) {
+    // Define file formats and types
+    const files = {
+      "Linear Model": `vp_linear_${vehicle}.json`,
+      "IDM Model (SUMO)": `idm_${vehicle}.json`,
+      "Wiedemann-99 Model (VISSIM)": `vissim_${vehicle}.json`
+    };
 
-  // Generate JSON file
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const url = window.URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `${brand}-${vehicle}-${algorithm}-${filetype}-parameters.json`;
-  document.body.appendChild(link);
-  link.click();
-  window.URL.revokeObjectURL(url);
-});
+    // Create buttons dynamically
+    Object.keys(files).forEach(modelType => {
+      const fileName = files[modelType];
+
+      const button = document.createElement("button");
+      button.textContent = `Download ${modelType}`;
+      button.style = "display: block; margin-top: 10px; padding: 8px 12px; font-size: 14px;";
+      button.onclick = function () {
+        const link = document.createElement("a");
+        link.href = `sandbox:/mnt/data/${fileName}`;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+
+      downloadContainer.appendChild(button);
+    });
+  }
+}
 </script>
               
             </div>
