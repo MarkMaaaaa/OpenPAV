@@ -89,7 +89,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="vehicle-and-model-selection">Vehicle and Model Selection</h1>
-<p>Use the form below to select your vehicle <strong>brand</strong>, <strong>model</strong>, and <strong>algorithm type</strong>. Then, click the download button to get the corresponding parameter file.</p>
+<p>Use the form below to select your vehicle <strong>brand</strong>, <strong>model</strong>, and <strong>algorithm type</strong>. Then, click the <strong>Download</strong> button to get the corresponding parameter file.</p>
 <form id="modelForm">
   <label for="brand">Select Vehicle Brand:</label>
   <select id="brand" required onchange="updateModels()">
@@ -120,7 +120,7 @@
   <br/><br/>
 
   <div id="downloadButtonContainer">
-    <!-- The download button will be inserted here dynamically -->
+    <!-- Download button will be inserted here dynamically -->
   </div>
 </form>
 
@@ -159,7 +159,7 @@ function updateDownloadButton() {
   const algorithm = document.getElementById("algorithm").value;
   const downloadContainer = document.getElementById("downloadButtonContainer");
 
-  // Clear previous buttons
+  // Clear previous button
   downloadContainer.innerHTML = "";
 
   if (vehicle && algorithm) {
