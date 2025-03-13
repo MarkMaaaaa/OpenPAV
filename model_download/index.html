@@ -89,7 +89,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="vehicle-and-model-selection">Vehicle and Model Selection</h1>
-<p>Use the form below to select your vehicle <strong>brand</strong> and <strong>model</strong>. Then, click the corresponding download button to get the parameter file.</p>
+<p>Use the form below to select your vehicle <strong>brand</strong>, <strong>model</strong>, and <strong>algorithm type</strong>. Then, click the download button to get the corresponding parameter file.</p>
 <form id="modelForm">
   <label for="brand">Select Vehicle Brand:</label>
   <select id="brand" required onchange="updateModels()">
@@ -103,14 +103,24 @@
   <br/><br/>
 
   <label for="vehicle">Select Vehicle Model:</label>
-  <select id="vehicle" required onchange="updateDownloadButtons()">
+  <select id="vehicle" required onchange="updateDownloadButton()">
     <option value="">--Select a Brand First--</option>
   </select>
 
   <br/><br/>
 
-  <div id="downloadButtons">
-    <!-- Download buttons will be inserted here dynamically -->
+  <label for="algorithm">Select Algorithm Model:</label>
+  <select id="algorithm" required onchange="updateDownloadButton()">
+    <option value="">--Select--</option>
+    <option value="Linear">Basic Linear Model</option>
+    <option value="IDM">IDM for SUMO</option>
+    <option value="Wiedemann-99">Wiedemann-99 for Vissim</option>
+  </select>
+
+  <br/><br/>
+
+  <div id="downloadButtonContainer">
+    <!-- The download button will be inserted here dynamically -->
   </div>
 </form>
 
@@ -144,39 +154,38 @@ function updateModels() {
   }
 }
 
-function updateDownloadButtons() {
+function updateDownloadButton() {
   const vehicle = document.getElementById("vehicle").value;
-  const downloadContainer = document.getElementById("downloadButtons");
+  const algorithm = document.getElementById("algorithm").value;
+  const downloadContainer = document.getElementById("downloadButtonContainer");
 
   // Clear previous buttons
   downloadContainer.innerHTML = "";
 
-  if (vehicle) {
-    // Define file formats and types
-    const files = {
-      "Linear Model": `vp_linear_${vehicle}.json`,
-      "IDM Model (SUMO)": `idm_${vehicle}.json`,
-      "Wiedemann-99 Model (VISSIM)": `vissim_${vehicle}.json`
+  if (vehicle && algorithm) {
+    // Define file formats based on the selected algorithm
+    const fileMap = {
+      "Linear": `vp_linear_${vehicle}.json`,
+      "IDM": `idm_${vehicle}.json`,
+      "Wiedemann-99": `vissim_${vehicle}.json`
     };
 
-    // Create buttons dynamically
-    Object.keys(files).forEach(modelType => {
-      const fileName = files[modelType];
+    const fileName = fileMap[algorithm];
 
-      const button = document.createElement("button");
-      button.textContent = `Download ${modelType}`;
-      button.style = "display: block; margin-top: 10px; padding: 8px 12px; font-size: 14px;";
-      button.onclick = function () {
-        const link = document.createElement("a");
-        link.href = `sandbox:/mnt/data/${fileName}`;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
+    // Create a download button
+    const button = document.createElement("button");
+    button.textContent = `Download ${algorithm} Model`;
+    button.style = "display: block; margin-top: 10px; padding: 8px 12px; font-size: 14px;";
+    button.onclick = function () {
+      const link = document.createElement("a");
+      link.href = `sandbox:/mnt/data/${fileName}`;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
 
-      downloadContainer.appendChild(button);
-    });
+    downloadContainer.appendChild(button);
   }
 }
 </script>
