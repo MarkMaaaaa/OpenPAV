@@ -74,13 +74,6 @@ We welcome contributions to Open-PAV! Here’s how you can help:
 If you use Open-PAV in your research or projects, please cite the following:
 
 ```bibtex
-@inproceedings{openpav2024,
-  title={Open-PAV: An Open Platform for Automated Vehicle Data and Model Integration},
-  author={Your Name and Collaborators},
-  booktitle={Proceedings of the International Conference on Automated Vehicle Research},
-  year={2024},
-  organization={Your Institution}
-}
 @article{zhou2024unified,
   title={A unified longitudinal trajectory dataset for automated vehicle},
   author={Zhou, Hang and Ma, Ke and Liang, Shixiao and Li, Xiaopeng and Qu, Xiaobo},
