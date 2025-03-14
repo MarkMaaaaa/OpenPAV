@@ -100,8 +100,10 @@ Open-PAV is released under the [MIT License](LICENSE). See the LICENSE file for 
 
 ## Contributors
 
-Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.edu/, Founder: Xiaopeng Li (https://catslab.engr.wisc.edu/staff/xiaopengli/)))
-
+Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.edu/))
+### Lab Principal Investigator:
+- Xiaopeng Li ([Homepage](https://catslab.engr.wisc.edu/staff/xiaopengli/))
+  
 ### Project Lead:
 - Ke Ma ([Homepage](https://markmaaaaa.github.io/KeMa.github.io/portfolio/))
 
