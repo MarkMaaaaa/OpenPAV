@@ -100,16 +100,14 @@ Open-PAV is released under the [MIT License](LICENSE). See the LICENSE file for 
 
 ## Contributors
 
-Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.edu/))
-### Lab Principal Investigator:
-- Xiaopeng Li ([Homepage](https://catslab.engr.wisc.edu/staff/xiaopengli/))
+Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.edu/)Xiaopeng Li ([Homepage](https://catslab.engr.wisc.edu/staff/xiaopengli/)))
   
 ### Project Lead:
 - Ke Ma ([Homepage](https://markmaaaaa.github.io/KeMa.github.io/portfolio/))
 
 ### Team Members:
 - Hang Zhou ([LinkedIn](https://www.linkedin.com/in/hang-zhou-50722a2a5/).)
-
+- Shixiao Liang ([LinkedIn](https://www.linkedin.com/in/hang-zhou-50722a2a5/).)
 
 ### External Acknowledgements:
 We would like to thank the collaborator Jinbiao Huo's effort in this project.
