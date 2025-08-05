@@ -1,14 +1,13 @@
 # Open-PAV
 
-Open-PAV (Open Product Automated Vehicle) is an open platform designed to facilitate **data collection, model calibration, and simulation of producted automated vehicle behaviors**. It integrates diverse datasets and calibrated vehicle models, making it an essential tool for researchers and developers aiming to study product automated vehicle (PAV) dynamics and their impacts. The project encourages contributions from the research community and provides ready-to-use model parameters for seamless integration with simulation tools.
+Open-PAV (Open Production Automated Vehicle) is an open platform designed to facilitate **data collection, model calibration, and simulation** of production automated vehicle (PAV) behaviors. It integrates diverse datasets and calibrated vehicle models, making it an essential tool for researchers and developers aiming to study PAV dynamics and their impacts. The project encourages contributions from the research community and provides ready-to-use model parameters for seamless integration with simulation tools.
 
 ## Key Features
 
 - **Comprehensive Dataset:**
-  - Collects and organizes data from PAVs, including LiDAR, images, videos, and trajectory data (We have summarized 14 AV brands, 33 AV models in 13 Open-source AV Datasets from 6 AV Data Providers, [Dataset Publication](https://www.nature.com/articles/s41597-024-03795-y)).
-<img src="./docs/images/Dataset.png" alt="Major Components" width="600">
-  - Provides datasets in a unified vectorized format for efficient access and analysis.
-
+  - A comprehensive trajectory dataset has been compiled by six research teams, including the CATS Lab at UW–Madison, the VECTOR Center at Vanderbilt University, the ITS Lab at Florida Atlantic University, the European Commission’s Joint Research Centre, the UCLA Mobility Lab and Transportation Research Center, Waymo, and Argo AI. This dataset encompasses trajectory data from 14 AV brands and 33 AV models, drawn from 13 open-source AV datasets. All data have been converted into a unified vectorized format to enable efficient access and analysis.  [[Paper]](https://www.nature.com/articles/s41597-024-03795-y) [[Data]](https://github.com/CATS-Lab/Filed-Experiment-Data-ULTra-AV)
+  <img src="./docs/images/Dataset.png" alt="Major Components" width="600">
+  
 - **Kinematic Model Calibration:**
   - Supports linear models, IDM models (for SUMO), Wiedemann-99 (for Vissim), and machine learning-based models.
   - Includes pre-configured model parameters for direct use in traditional simulation software.
@@ -110,6 +109,6 @@ Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.ed
 - Shixiao Liang ([LinkedIn](https://www.linkedin.com/in/hang-zhou-50722a2a5/).)
 
 ### External Acknowledgements:
-This project is partially supported by the Center for Connected and Automated Transportation (CCAT) project “Roadway Friction Screening and Measurement with Automated Vehicle Telematics and Control”. We would like to thank the collaborator Jinbiao Huo's effort in this project.
+This project is partially supported by the Center for Connected and Automated Transportation (CCAT) through the project titled *"Roadway Friction Screening and Measurement with Automated Vehicle Telematics and Control"*. We would like to thank our collaborator Jinbiao Huo for his valuable contributions to this project. We also sincerely appreciate all the dataset providers and contributors for making this work possible.
 
 
