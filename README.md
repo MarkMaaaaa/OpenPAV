@@ -101,7 +101,7 @@ Open-PAV is released under the [MIT License](LICENSE). See the LICENSE file for 
 ## Contributors
 
 Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.edu/)Xiaopeng Li ([Homepage](https://catslab.engr.wisc.edu/staff/xiaopengli/)))
-  
+
 ### Project Lead:
 - Ke Ma ([Homepage](https://markmaaaaa.github.io/KeMa.github.io/portfolio/))
 
@@ -110,6 +110,6 @@ Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.ed
 - Shixiao Liang ([LinkedIn](https://www.linkedin.com/in/hang-zhou-50722a2a5/).)
 
 ### External Acknowledgements:
-We would like to thank the collaborator Jinbiao Huo's effort in this project.
+This project is partially supported by the Center for Connected and Automated Transportation (CCAT) project “Roadway Friction Screening and Measurement with Automated Vehicle Telematics and Control”. We would like to thank the collaborator Jinbiao Huo's effort in this project.
 
 
