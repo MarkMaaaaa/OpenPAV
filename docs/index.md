@@ -50,4 +50,4 @@ For more details, refer to the [Open-PAV Documentation](#).
 
 ## Sponsors
 
-![image-20250805211205549](C:\Users\zh200\AppData\Roaming\Typora\typora-user-images\image-20250805211205549.png)
+![Sponsors](C:\Users\zh200\OneDrive\文档\GitHub\OpenPAV\docs\images\Sponsors.png)
