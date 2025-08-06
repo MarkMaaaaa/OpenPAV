@@ -110,7 +110,7 @@ Open-PAV is developed and maintained by: [CATS Lab](https://catslab.engr.wisc.ed
 
 ### Sponsors:
 
-![Sponsors](C:\Users\zh200\OneDrive\文档\GitHub\OpenPAV\docs\images\Sponsors.png)
+![Sponsors](./docs/images/Sponsors.png)
 
 ### External Acknowledgements:
 
