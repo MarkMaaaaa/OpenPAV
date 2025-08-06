@@ -105,8 +105,8 @@ Open-PAV is developed and maintained by: [CATS Lab](https://catslab.engr.wisc.ed
 - Ke Ma ([Homepage](https://markmaaaaa.github.io/KeMa.github.io/portfolio/))
 
 ### Team Members:
-- Hang Zhou ([Homepage]([Zhou, Hang – CATS Lab – UW–Madison](https://catslab.engr.wisc.edu/staff/zhou-hang/)))
-- Shixiao Liang ([Homepage]([Liang, Shixiao – CATS Lab – UW–Madison](https://catslab.engr.wisc.edu/staff/liang-shixiao/)))
+- Hang Zhou ([Homepage](https://catslab.engr.wisc.edu/staff/zhou-hang/))
+- Shixiao Liang ([Homepage](https://catslab.engr.wisc.edu/staff/liang-shixiao/))
 
 ### Sponsors:
 
