@@ -42,7 +42,7 @@ Open-PAV consists of the following components:
 <!-- **Scenario Manager:** Tools to create and manage simulation scenarios based on real-world data. -->
 ![Major Components](./docs/images/Workflow.png)
 
-Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV/) for more details.
+Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV) for more details.
 
 ## Get Started
 

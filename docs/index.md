@@ -50,4 +50,4 @@ For more details, refer to the [Open-PAV Documentation](#).
 
 ## Sponsors
 
-![Sponsors](C:\Users\zh200\OneDrive\文档\GitHub\OpenPAV\docs\images\Sponsors.png)
+![Sponsors](images/Sponsors.png)
