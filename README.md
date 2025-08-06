@@ -108,7 +108,10 @@ Open-PAV is developed and maintained by:([CATS Lab](https://catslab.engr.wisc.ed
 - Hang Zhou ([LinkedIn](https://www.linkedin.com/in/hang-zhou-50722a2a5/).)
 - Shixiao Liang ([LinkedIn](https://www.linkedin.com/in/hang-zhou-50722a2a5/).)
 
+### Sponsors:
+
+![image-20250805211205549](C:\Users\zh200\AppData\Roaming\Typora\typora-user-images\image-20250805211205549.png)
+
 ### External Acknowledgements:
-This project is partially supported by the Center for Connected and Automated Transportation (CCAT) through the project titled *"Roadway Friction Screening and Measurement with Automated Vehicle Telematics and Control"*. We would like to thank our collaborator Jinbiao Huo for his valuable contributions to this project. We also sincerely appreciate all the dataset providers and contributors for making this work possible.
 
-
+We would like to thank our collaborator Jinbiao Huo for his valuable contributions to this project. We also sincerely appreciate all the dataset providers and contributors for making this work possible.
