@@ -1,12 +1,26 @@
 # Open-PAV
 
-Open-PAV (Open Production Automated Vehicle) is an open platform designed to facilitate **data collection, model calibration, and simulation** of production automated vehicle (PAV) behaviors. It integrates diverse datasets and calibrated vehicle models, making it an essential tool for researchers and developers aiming to study PAV dynamics and their impacts. The project encourages contributions from the research community and provides ready-to-use model parameters for seamless integration with simulation tools.
+Open-PAV (Open Production Automated Vehicle) is an open platform designed to facilitate **data collection, scenario generation, and evaluation** of production automated vehicle (PAV) behaviors. It integrates diverse datasets and calibrated vehicle models, making it an essential tool for researchers and developers aiming to study PAV dynamics and their impacts. The project encourages contributions from the research community and provides ready-to-use model parameters for seamless integration with simulation tools.
+
+![Framework](./GitPage/docs/images/Framework.png)
+
+## Data Sources and Contributors
+
+Currently the dataset has examined 13 open-source datasets from 7 providers, each providing distinct insights into AV behavior across various driving conditions and scenarios. They are:
+
+- **Vanderbilt ACC Dataset**. Collected in Nashville, Tennessee by Vanderbilt University research group. Available at - [Adaptive Cruise Control Dataset ·](https://acc-dataset.github.io/).
+- **MircoSimACC Dataset**. Collected in four cities in Florida, including Delray Beach, Loxahatchee, Boca Raton, and Parkland by the Florida Atlantic University research group. Available at  - [microSIM-ACC](https://github.com/microSIM-ACC).
+- **CATS Open Datasets**. Three datasets were gathered in Tampa, Florida, and Madison, Wisconsin by the CATS Lab. Available at - [CATS Lab](https://github.com/CATS-Lab).
+- **OpenACC Database**. Four datasets were collected across Italy, Sweden, and Hungary by the European Commission's Joint Research Centre. Available at - [data.europa.eu](https://data.europa.eu/data/datasets/9702c950-c80f-4d2f-982f-44d06ea0009f?locale=en).
+- **Central Ohio ACC Datasets**. Two datasets were collated in Ohio by UCLA's Mobility Lab and Transportation Research Center. Available at - [Advanced Driver Assistance System (ADAS)-Equipped Single-Vehicle Data for Central Ohio](https://catalog.data.gov/dataset/advanced-driver-assistance-system-adas-equipped-single-vehicle-data-for-central-ohio).
+- **Waymo Open Dataset**. Two datasets were collected in six cities including San Francisco, Mountain View, and Los Angeles in California, Phoenix in Arizona, Detroit in Michigan, and Seattle in Washington by Waymo. Available at - [Waymo Motion Dataset](https://waymo.com/open/data/motion/) and [Vehicle trajectory data processed from the Waymo Open Dataset](https://data.mendeley.com/datasets/wfn2c3437n/2).
+- **Argoverse 2 Motion Forecasting Dataset**. Collected from Austin in Texas, Detroit in Michigan, Miami in Florida, Pittsburgh in Pennsylvania, Palo Alto in California, and Washington, D.C. by Argo AI with researchers from Carnegie Mellon University and the Georgia Institute of Technology. Available at -  [Argoverse 2 Motion Forcasting Dataset](https://www.argoverse.org/av2.html).
 
 ## Key Features
 
 - **Comprehensive Dataset:**
-  - A comprehensive trajectory dataset has been compiled by six research teams, including the CATS Lab at UW–Madison, the VECTOR Center at Vanderbilt University, the ITS Lab at Florida Atlantic University, the European Commission’s Joint Research Centre, the UCLA Mobility Lab and Transportation Research Center, Waymo, and Argo AI. This dataset encompasses trajectory data from 14 AV brands and 33 AV models, drawn from 13 open-source AV datasets. All data have been converted into a unified vectorized format to enable efficient access and analysis.  [[Paper]](https://www.nature.com/articles/s41597-024-03795-y) [[Data]](https://github.com/CATS-Lab/Filed-Experiment-Data-ULTra-AV)
-  <img src="./docs/images/Dataset.png" alt="Major Components" width="600">
+  - A comprehensive trajectory dataset has been compiled by seven research teams. This dataset encompasses trajectory data from 14 AV brands and 33 AV models, drawn from 13 open-source AV datasets. All data have been converted into a unified vectorized format to enable efficient access and analysis.  [[Paper]](https://www.nature.com/articles/s41597-024-03795-y) [[Data]](https://github.com/CATS-Lab/Filed-Experiment-Data-ULTra-AV)
+  <img src="./GitPage/docs/images/Dataset.png" alt="Major Components" width="600">
   
 - **Kinematic Model Calibration:**
   - Supports linear models, IDM models (for SUMO), Wiedemann-99 (for Vissim), and machine learning-based models.
@@ -28,9 +42,6 @@ Open-PAV (Open Production Automated Vehicle) is an open platform designed to fac
 - **Dataset Expansion:** Added new open-source trajectory datasets from ULTRA datasets.
 - **Model Enhancements:** Improved basic logic for the project.
 
-### November 2024
-- **Project Startup:** Comprehensive installation and user guides are now available.
-
 
 ## Major Components
 
@@ -39,8 +50,7 @@ Open-PAV consists of the following components:
 - **Data Repository:** A unified storage of diverse datasets (LiDAR, images, videos, trajectories).
 - **Model Calibration:** Utilities to calibrate vehicle kinematic models and export them for simulation.
 - **Simulation Integration:** Pre-configured packages for SUMO, Vissim, and other platforms.
-<!-- **Scenario Manager:** Tools to create and manage simulation scenarios based on real-world data. -->
-![Major Components](./docs/images/Workflow.png)
+![Major Components](./GitPage/docs/images/Workflow.png)
 
 Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV) for more details.
 
@@ -61,37 +71,10 @@ Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV) for mor
 - [Class Design](https://open-pav-documentation.readthedocs.io/en/latest/developer_tutorial.html)
 - [Customizing Algorithms](https://open-pav-documentation.readthedocs.io/en/latest/customization.html)
 
-## Contribution Rules
+## Relevant Literature
 
-We welcome contributions to Open-PAV! Here’s how you can help:
-
-- Report bugs and suggest improvements by submitting issues.
-- Submit contributions via [pull requests](https://github.com/example/Open-PAV/pulls). Please use the provided [pull request template](.github/PR_TEMPLATE.md).
-
-## Citation
-
-If you use Open-PAV in your research or projects, please cite the following:
-
-```bibtex
-@article{zhou2024unified,
-  title={A unified longitudinal trajectory dataset for automated vehicle},
-  author={Zhou, Hang and Ma, Ke and Liang, Shixiao and Li, Xiaopeng and Qu, Xiaobo},
-  journal={Scientific Data},
-  volume={11},
-  number={1},
-  pages={1123},
-  year={2024},
-  publisher={Nature Publishing Group UK London}
-}
-@article{ma2025automated,
-  title={Automated vehicle microscopic energy consumption study (AV-Micro): Data collection and model development},
-  author={Ma, Ke and Zhou, Hang and Liang, Zhaohui and Li, Xiaopeng},
-  journal={Energy},
-  pages={135096},
-  year={2025},
-  publisher={Elsevier}
-}
-```
+- Zhou, H., Ma, K., Liang, S., Li, X. and Qu, X., 2024. A unified longitudinal trajectory dataset for automated vehicle. *Scientific Data*, *11*(1), p.1123.
+- Ma, K., Zhou, H., Liang, Z. and Li, X., 2025. Automated vehicle microscopic energy consumption study (AV-Micro): Data collection and model development. *Energy*, *320*, p.135096.
 
 ## License
 
@@ -99,19 +82,31 @@ Open-PAV is released under the [MIT License](LICENSE). See the LICENSE file for 
 
 ## Contributors
 
-Open-PAV is developed and maintained by: [CATS Lab](https://catslab.engr.wisc.edu/) Xiaopeng Li ([Homepage](https://catslab.engr.wisc.edu/staff/xiaopengli/))
+### Contributing Organizations:
+- [CATS Lab](https://catslab.engr.wisc.edu/) (PI: [Xiaopeng Li](https://catslab.engr.wisc.edu/staff/xiaopengli/))
 
-### Project Lead:
-- Ke Ma ([Homepage](https://markmaaaaa.github.io/KeMa.github.io/portfolio/))
+### Technical Contributors:
 
+<<<<<<< HEAD
+- UW-Madisons: [Ke Ma](https://markmaaaaa.github.io/KeMa.github.io/), [Hang Zhou]([Zhou, Hang – CATS Lab – UW–Madison](https://catslab.engr.wisc.edu/staff/zhou-hang/)), Keke Long, Chengyuan Ma.
+=======
 ### Team Members:
 - Hang Zhou ([Homepage](https://catslab.engr.wisc.edu/staff/zhou-hang/))
 - Shixiao Liang ([Homepage](https://catslab.engr.wisc.edu/staff/liang-shixiao/))
+>>>>>>> b0cdb7832d904091a4e9101968a203ced3910b88
 
-### Sponsors:
+### Contribution Rules:
 
-![Sponsors](./docs/images/Sponsors.png)
+We welcome contributions to Open-PAV! Here’s how you can help:
 
-### External Acknowledgements:
+- Report bugs and suggest improvements by submitting issues.
+- Submit contributions via [pull requests](https://github.com/example/Open-PAV/pulls). Please use the provided [pull request template](.github/PR_TEMPLATE.md).
+- Please contact Hang Zhou (hzhou364@wisc.edu) if you want to join the regular contributors' team!
 
+<<<<<<< HEAD
+### Acknowledgements:
+
+This project is partially supported by the Center for Connected and Automated Transportation (CCAT) through the project titled *"Traffic Control based on CARMA Platform for Maximal Traffic Mobility and Safety"*, National Institute for Congestion Reduction (NICR) through *"Transit Priority Phase II: Network Control in Realistic Settings with Heterogeneous Vehicles"* and *"Cordon-Metering Rules for Present-Day and Future Cities"*, and National Science Foundation (NSF) through *"NSF	CPS: Small: NSF-DST: Turning “Tragedy of the Commons (ToC)” into “Emergent Cooperative Behavior (ECB)” for Automated Vehicles at Intersections with Meta-Learning"*. We also sincerely appreciate all the dataset providers and contributors for making this work possible.
+=======
 We would like to thank our collaborator Jinbiao Huo for his valuable contributions to this project. We also sincerely appreciate all the dataset providers and contributors for making this work possible.
+>>>>>>> b0cdb7832d904091a4e9101968a203ced3910b88
