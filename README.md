@@ -46,7 +46,7 @@ By organizing the data from the above datasets, we processed a unified trajector
 - **Simulation Integration:** Configured packages for SUMO, Vissim, and basic parameters for models.
 
 ### December 2024
-- **Dataset Expansion:** Added new open-source trajectory datasets from ULTRA datasets.
+- **Dataset Expansion:** Added new open-source trajectory datasets from ULTra-AV datasets.
 - **Model Enhancements:** Improved basic logic for the project.
 
 
@@ -54,10 +54,10 @@ By organizing the data from the above datasets, we processed a unified trajector
 
 Open-PAV consists of the following components:
 
-- **Data Repository:** A unified storage of diverse datasets (LiDAR, images, videos, trajectories).
-- **Model Calibration:** Utilities to calibrate vehicle kinematic models and export them for simulation.
-- **Simulation Integration:** Pre-configured packages for SUMO, Vissim, and other platforms.
-![Major Components](./GitPage/docs/images/Workflow.png)
+- **Data Process:** Given the raw AV data (LiDAR, images, videos, trajectories) as input, this module converts data of the same type into a unified format and performs preliminary data cleaning.
+- **System Identification:** Using the processed AV data, this module calibrates the vehicle kinematic models of automated vehicles and exports them for simulation use. Users can also directly input their AV software stack to test their developed AV system within this module.
+- **Scenario Generation:** This module is designed to generate tailored safety-critical driving scenarios specific to a given AV model, aiming to evaluate its safety performance.
+- **Evaluation:** The generated scenarios are fed into pre-configured simulators, such as SUMO, VISSIM, and CARLA, for more accurate safety evaluation.
 
 Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV) for more details.
 
@@ -78,32 +78,37 @@ Check the [Open-PAV Documentation](https://markmaaaaa.github.io/OpenPAV) for mor
 - [Class Design](https://open-pav-documentation.readthedocs.io/en/latest/developer_tutorial.html)
 - [Customizing Algorithms](https://open-pav-documentation.readthedocs.io/en/latest/customization.html)
 
-## Relevant Literature
-
-- Zhou, H., Ma, K., Liang, S., Li, X. and Qu, X., 2024. A unified longitudinal trajectory dataset for automated vehicle. *Scientific Data*, *11*(1), p.1123.
-- Ma, K., Zhou, H., Liang, Z. and Li, X., 2025. Automated vehicle microscopic energy consumption study (AV-Micro): Data collection and model development. *Energy*, *320*, p.135096.
-
 ## Contributors
 
-### Contributing Organizations:
+### Contributing Groups:
 - [CATS Lab](https://catslab.engr.wisc.edu/) (PI: [Xiaopeng Li](https://catslab.engr.wisc.edu/staff/xiaopengli/))
 
 ### Technical Contributors:
 
-- UW-Madisons: [Ke Ma](https://markmaaaaa.github.io/KeMa.github.io/), [Hang Zhou]([Zhou, Hang – CATS Lab – UW–Madison](https://catslab.engr.wisc.edu/staff/zhou-hang/)), Keke Long, Chengyuan Ma.
+- [Ke Ma**](https://markmaaaaa.github.io/KeMa.github.io/), [Hang Zhou**]([Zhou, Hang – CATS Lab – UW–Madison](https://catslab.engr.wisc.edu/staff/zhou-hang/)), Keke Long** , Chengyuan Ma**.
 
 ### Contribution Rules:
 
-We welcome contributions to Open-PAV! Here’s how you can help:
+We welcome contributions to Open-PAV! Our projects have three levels of contributors. They are:
 
-- Report bugs and suggest improvements by submitting issues.
-- Submit contributions via [pull requests](https://github.com/example/Open-PAV/pulls). Please use the provided [pull request template](.github/PR_TEMPLATE.md).
-- Please contact Hang Zhou (hzhou364@wisc.edu) if you want to join the regular contributors' team!
+1. *Raw Data Contributor (\*)*: Contribute raw PAV data to the platform.
+
+2. *Processed Data Contributor (\*\*)*. Contribute processed PAV data based on our standard format to the platform. 
+
+3. *Evaluation Contributor (\*\*\*)*. Contribute PAV software stacks or calibrated AV models by using “System Identification” module. Then run the “Evaluation” module in specific scenarios to evaluate its performance on, e.g., safety, mobility, energy, etc.
+
+For other users, you can also report bugs and suggest improvements by submitting issues.
 
 ### Acknowledgements:
 
 This project is partially supported by the Center for Connected and Automated Transportation (CCAT) through the project titled *"Traffic Control based on CARMA Platform for Maximal Traffic Mobility and Safety"*, National Institute for Congestion Reduction (NICR) through *"Transit Priority Phase II: Network Control in Realistic Settings with Heterogeneous Vehicles"* and *"Cordon-Metering Rules for Present-Day and Future Cities"*, and National Science Foundation (NSF) through *"NSF	CPS: Small: NSF-DST: Turning “Tragedy of the Commons (ToC)” into “Emergent Cooperative Behavior (ECB)” for Automated Vehicles at Intersections with Meta-Learning"*. We also sincerely appreciate all the dataset providers and contributors for making this work possible.
 
+## Relevant Publications
+
+- Zhou, H., Ma, K., Liang, S., Li, X. and Qu, X., 2024. A unified longitudinal trajectory dataset for automated vehicle. *Scientific Data*, *11*(1), p.1123.
+- Ma, K., Zhou, H., Liang, Z. and Li, X., 2025. Automated vehicle microscopic energy consumption study (AV-Micro): Data collection and model development. *Energy*, *320*, p.135096.
+
 ## License
 
 Open-PAV is released under the [MIT License](LICENSE). See the LICENSE file for details.
+
